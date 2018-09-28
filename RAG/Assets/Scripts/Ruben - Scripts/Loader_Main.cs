@@ -17,12 +17,12 @@ public class Loader_Main : MonoBehaviour {
 	}
 	void Update () {
 		if (SceneManager.GetActiveScene ().name == "Loading" && enumerating == false && nextScene != null) {
-			StartCoroutine (LoadLevel());
+			StartCoroutine (LoadLevel ());
 			enumerating = true;
 		}
 	}
 	IEnumerator LoadLevel () {
-		asyncLoad = SceneManager.LoadSceneAsync(nextScene);
+		asyncLoad = SceneManager.LoadSceneAsync (nextScene);
 		while (!asyncLoad.isDone) {
 			if (asyncLoad.allowSceneActivation != false) {
 				asyncLoad.allowSceneActivation = false;

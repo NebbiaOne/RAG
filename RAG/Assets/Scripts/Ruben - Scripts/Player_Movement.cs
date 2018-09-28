@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
 public class Player_Movement : MonoBehaviour {
+	Overlord_Main _Overlord;
 	Player rwInput;
 	Rigidbody rbPlayer;
 	Quaternion inputRotation, movementDirection;
@@ -10,21 +11,32 @@ public class Player_Movement : MonoBehaviour {
 	float horizontalMovmement, verticalMovement, jumpCounter = 3f;
 	[SerializeField]
 	float movementSpeed, jumpForce, rotationSpeed, maxSpeed = 5f, dashStrength = 125f, dashWaiter = 0.25f;
+	void Awake () {
+		_Overlord = Overlord_Main._Overlord_main;
+	}
 	void Start () {
-		rwInput = ReInput.players.GetPlayer (0);
+		if (gameObject.tag == "Player_01") {
+			rwInput = ReInput.players.GetPlayer (0);
+		}
+		if (gameObject.tag == "Player_02") {
+			rwInput = ReInput.players.GetPlayer (1);
+		}
+		if (gameObject.tag == "Player_03") {
+			rwInput = ReInput.players.GetPlayer (2);
+		}
+		if (gameObject.tag == "Player_04") {
+			rwInput = ReInput.players.GetPlayer (3);
+		}
+
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
 	}
 	void Update () {
-		Debug.Log (Mathf.Atan2 (rwInput.GetAxis ("CM_Horizontal"), rwInput.GetAxis ("CM_Vertical")) * 180 / Mathf.PI);
-		if (rwInput.GetButton ("Dash") && dashAble == true) {
+		if (rwInput.GetButton ("Dash") && new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude < maxSpeed + 0.25f && dashAble == true) {
 			dashAble = false;
 			StartCoroutine (Dash ());
 		}
 		if (Mathf.Round (rbPlayer.velocity.y * 100) / 100 == 0f) {
 			jumpCounter = 3f;
-		}
-		if (rwInput.GetButtonDown ("Action")) {
-			Debug.Log ("Action!");
 		}
 		if (rwInput.GetAxis ("CL_Horizontal") == 0 && rwInput.GetAxis ("CL_Vertical") == 0 && rwInput.GetAxis ("CM_Horizontal") == 0 && rwInput.GetAxis ("CM_Vertical") == 0) {
 			transform.rotation = Quaternion.RotateTowards (transform.rotation, inputRotation, rotationSpeed);
