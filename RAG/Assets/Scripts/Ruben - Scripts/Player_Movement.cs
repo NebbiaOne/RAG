@@ -7,10 +7,10 @@ public class Player_Movement : MonoBehaviour {
 	Player rwInput;
 	Rigidbody rbPlayer;
 	Quaternion inputRotation, movementDirection;
-	bool dashAble = true;
+	bool dashWaited = false, dashAble = true;
 	float horizontalMovmement, verticalMovement, jumpCounter = 3f;
 	[SerializeField]
-	float movementSpeed, jumpForce, rotationSpeed, maxSpeed = 5f, dashStrength = 125f, dashWaiter = 0.25f;
+	float movementSpeed = 150, jumpForce = 75, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashWaiter = 0.25f;
 	void Awake () {
 		_Overlord = Overlord_Main._Overlord_main;
 	}
@@ -31,11 +31,17 @@ public class Player_Movement : MonoBehaviour {
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
 	}
 	void Update () {
-		if (rwInput.GetButton ("Dash") && new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude < maxSpeed + 0.25f && dashAble == true) {
+		if (dashWaited == true && dashAble == false) {
+			if (rwInput.GetButton ("Dash")) {
+				dashWaited = false;
+				dashAble = true;
+			}
+		}
+		if (rwInput.GetButton ("Dash") /*&& new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude < maxSpeed + 0.25f*/ && dashAble == true) {
 			dashAble = false;
 			StartCoroutine (Dash ());
 		}
-		if (Mathf.Round (rbPlayer.velocity.y * 100) / 100 == 0f) {
+		if (Mathf.Round (rbPlayer.velocity.y * 1000) / 1000 == 0f) {
 			jumpCounter = 3f;
 		}
 		if (rwInput.GetAxis ("CL_Horizontal") == 0 && rwInput.GetAxis ("CL_Vertical") == 0 && rwInput.GetAxis ("CM_Horizontal") == 0 && rwInput.GetAxis ("CM_Vertical") == 0) {
@@ -66,8 +72,12 @@ public class Player_Movement : MonoBehaviour {
 		jumpCounter -= 1;
 	}
 	IEnumerator Dash () {
-		rbPlayer.AddForce (new Vector3 (horizontalMovmement * dashStrength, 0f, verticalMovement * dashStrength), ForceMode.Impulse);
+		if (rwInput.GetAxis ("CM_Vertical") == 0 && rwInput.GetAxis ("CM_Horizontal") == 0 && rwInput.GetAxis ("CL_Vertical") == 0 && rwInput.GetAxis ("CL_Horizontal") == 0) {
+			rbPlayer.AddForce (Vector3.down * dashStrength, ForceMode.Impulse);
+		} else {
+			rbPlayer.AddForce (new Vector3 (horizontalMovmement * dashStrength, 0f, verticalMovement * dashStrength), ForceMode.Impulse);
+		}
 		yield return new WaitForSeconds (dashWaiter);
-		dashAble = true;
+		dashWaited = true;
 	}
 }
