@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 [RequireComponent(typeof(Camera))]
 public class MultipleTargetCamera : MonoBehaviour {
-
+	public static MultipleTargetCamera _MultipleTargetCamera;
 	public List<Transform> targets;
 
 	public Vector3 offset;
@@ -17,7 +16,9 @@ public class MultipleTargetCamera : MonoBehaviour {
 
 	private Vector3 velocity;
 	private Camera cam;
-
+	void Awake () {
+		_MultipleTargetCamera = this;
+	}
 	void Start() 
 	{
 		cam = GetComponent<Camera>();

@@ -8,6 +8,10 @@ TagManager:
   - Player_02
   - Player_03
   - Player_04
+  - Weapon
+  - Shield
+  - Sensor_01
+  - Sensor_02
   layers:
   - Default
   - TransparentFX
@@ -19,9 +23,9 @@ TagManager:
   - 
   - PostProcessing
   - Player
-  - 
-  - 
-  - 
+  - Shield
+  - Sword
+  - Sensor
   - 
   - 
   - 
