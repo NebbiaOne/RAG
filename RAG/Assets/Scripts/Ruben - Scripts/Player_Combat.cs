@@ -10,7 +10,7 @@ public class Player_Combat : MonoBehaviour {
 	bool attacking = false, attackWaited = false, attackAble = true, blockAble = true;
 	int layerMask = 1 << 12;
 	[SerializeField]
-	float attackSpeed = 0.5f, blockTime = 2f, blockCooldown = 1f, knockback = 1f;
+	float attackSpeed = 0.5f, blockTime = 2f, blockCooldown = 1f, knockback = 5f;
 	public float playerHealth = 100;
 	void Start () {
 		_Main = transform.GetComponent<Player_Main> ();

@@ -654,7 +654,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1430573637368094, guid: a81139e449f3d6a4fa24afc75272adeb, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114362195262451478, guid: a81139e449f3d6a4fa24afc75272adeb,
+        type: 2}
+      propertyPath: knockback
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81139e449f3d6a4fa24afc75272adeb, type: 2}
@@ -1354,7 +1359,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1379277283887372, guid: f8e99c5b89882c349a5e1d165c9fcf5b, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114031924396592368, guid: f8e99c5b89882c349a5e1d165c9fcf5b,
+        type: 2}
+      propertyPath: knockback
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e99c5b89882c349a5e1d165c9fcf5b, type: 2}
@@ -2185,7 +2195,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1504875760285604, guid: 4ece897d6ea888445b2902bed9ac8055, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114911456021005382, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: knockback
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ece897d6ea888445b2902bed9ac8055, type: 2}
@@ -2529,7 +2544,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1618761449294454, guid: 8ee4bef98b43241459e52dee3b589b59, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114665268239976402, guid: 8ee4bef98b43241459e52dee3b589b59,
+        type: 2}
+      propertyPath: knockback
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee4bef98b43241459e52dee3b589b59, type: 2}

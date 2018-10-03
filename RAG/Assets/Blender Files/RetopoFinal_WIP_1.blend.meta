@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 3944277cfd9370f40b2269ef634b78c6
-=======
-guid: 542321ce96c627d4eac8f578cfb69ea6
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -17,17 +13,14 @@ ModelImporter:
     100014: Cube_019
     100016: Cube_020
     100018: Cube_021
-    100020: Retopo
-    100022: //RootNode
-    100024: SculptFinal
-<<<<<<< HEAD
-=======
-    100026: Cylinder
-    100028: Cylinder_001
-    100030: Retopo_001
-    100032: Retopo_002
-    100034: Retopo_003
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
+    100020: Cylinder
+    100022: Cylinder_001
+    100024: Retopo
+    100026: Retopo_001
+    100028: Retopo_002
+    100030: Retopo_003
+    100032: //RootNode
+    100034: SculptFinal
     400000: Cube_002
     400002: Cube_003
     400004: Cube_014
@@ -38,23 +31,18 @@ ModelImporter:
     400014: Cube_019
     400016: Cube_020
     400018: Cube_021
-    400020: Retopo
-    400022: //RootNode
-    400024: SculptFinal
-<<<<<<< HEAD
-    2100000: unnamed
-    2100002: Material
-=======
-    400026: Cylinder
-    400028: Cylinder_001
-    400030: Retopo_001
-    400032: Retopo_002
-    400034: Retopo_003
-    2100000: unnamed
-    2100002: Material
-    2100004: Material_002
+    400020: Cylinder
+    400022: Cylinder_001
+    400024: Retopo
+    400026: Retopo_001
+    400028: Retopo_002
+    400030: Retopo_003
+    400032: //RootNode
+    400034: SculptFinal
+    2100000: Material_002
+    2100002: unnamed
+    2100004: Material
     2100006: Material_001
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
     2300000: Cube_002
     2300002: Cube_003
     2300004: Cube_014
@@ -65,16 +53,13 @@ ModelImporter:
     2300014: Cube_019
     2300016: Cube_020
     2300018: Cube_021
-    2300020: Retopo
-    2300022: SculptFinal
-<<<<<<< HEAD
-=======
-    2300024: Cylinder
-    2300026: Cylinder_001
-    2300028: Retopo_001
-    2300030: Retopo_002
-    2300032: Retopo_003
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
+    2300020: Cylinder
+    2300022: Cylinder_001
+    2300024: Retopo
+    2300026: Retopo_001
+    2300028: Retopo_002
+    2300030: Retopo_003
+    2300032: SculptFinal
     3300000: Cube_002
     3300002: Cube_003
     3300004: Cube_014
@@ -85,36 +70,30 @@ ModelImporter:
     3300014: Cube_019
     3300016: Cube_020
     3300018: Cube_021
-    3300020: Retopo
-    3300022: SculptFinal
-<<<<<<< HEAD
-=======
-    3300024: Cylinder
-    3300026: Cylinder_001
-    3300028: Retopo_001
-    3300030: Retopo_002
-    3300032: Retopo_003
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
-    4300000: SculptFinal
-    4300002: Retopo
-    4300004: Cube_003
-    4300006: Cube_020
-    4300008: Cube_019
-    4300010: Cube_014
-    4300012: Cube_018
-    4300014: Cube_017
-    4300016: Cube_016
-    4300018: Cube_015
-    4300020: Cube_002
-    4300022: Cube_021
-<<<<<<< HEAD
-=======
-    4300024: Retopo_002
-    4300026: Retopo_001
-    4300028: Cylinder_001
-    4300030: Cylinder
-    4300032: Retopo_003
->>>>>>> 560b51ae0607d5cba621277195e591dddb98a5cb
+    3300020: Cylinder
+    3300022: Cylinder_001
+    3300024: Retopo
+    3300026: Retopo_001
+    3300028: Retopo_002
+    3300030: Retopo_003
+    3300032: SculptFinal
+    4300000: Retopo_002
+    4300002: SculptFinal
+    4300004: Retopo_003
+    4300006: Retopo_001
+    4300008: Retopo
+    4300010: Cylinder_001
+    4300012: Cylinder
+    4300014: Cube_003
+    4300016: Cube_020
+    4300018: Cube_019
+    4300020: Cube_014
+    4300022: Cube_018
+    4300024: Cube_017
+    4300026: Cube_016
+    4300028: Cube_015
+    4300030: Cube_002
+    4300032: Cube_021
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504875760285604}
   m_LocalRotation: {x: 6.261657e-14, y: -1, z: 0.0000000218557, w: 0.0000029504295}
-  m_LocalPosition: {x: 13.11, y: 2.6120563, z: 0.7878223}
+  m_LocalPosition: {x: -4.630001, y: 2.6120563, z: -5.95}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 4991820209177912}
@@ -529,7 +529,8 @@ MonoBehaviour:
   rotationSpeed: 50
   maxSpeed: 5
   dashStrength: 125
-  dashWaiter: 0.25
+  dashUseWaiter: 0.25
+  dashRechargeWaiter: 1
 --- !u!114 &114365739483432862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -578,6 +579,7 @@ MonoBehaviour:
   attackSpeed: 0.1
   blockTime: 2
   blockCooldown: 1
+  knockback: 5
   playerHealth: 100
 --- !u!114 &114970385474811992
 MonoBehaviour:
@@ -594,6 +596,7 @@ MonoBehaviour:
   preciseSensor: {fileID: 1863539804671982}
   playerHealth: 100
   isTargeted: 0
+  _MainEnemy: {fileID: 0}
   sensor_01: 0
   sensor_02: 0
   target: {fileID: 0}
