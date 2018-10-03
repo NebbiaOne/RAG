@@ -20,6 +20,7 @@ ModelImporter:
     100028: Cylinder_001
     100030: Retopo_001
     100032: Retopo_002
+    100034: Retopo_003
     400000: Cube_002
     400002: Cube_003
     400004: Cube_014
@@ -37,6 +38,7 @@ ModelImporter:
     400028: Cylinder_001
     400030: Retopo_001
     400032: Retopo_002
+    400034: Retopo_003
     2100000: unnamed
     2100002: Material
     2100004: Material_002
@@ -57,6 +59,7 @@ ModelImporter:
     2300026: Cylinder_001
     2300028: Retopo_001
     2300030: Retopo_002
+    2300032: Retopo_003
     3300000: Cube_002
     3300002: Cube_003
     3300004: Cube_014
@@ -73,6 +76,7 @@ ModelImporter:
     3300026: Cylinder_001
     3300028: Retopo_001
     3300030: Retopo_002
+    3300032: Retopo_003
     4300000: SculptFinal
     4300002: Retopo
     4300004: Cube_003
@@ -89,6 +93,7 @@ ModelImporter:
     4300026: Retopo_001
     4300028: Cylinder_001
     4300030: Cylinder
+    4300032: Retopo_003
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}
