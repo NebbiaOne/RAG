@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Overlord_Main : MonoBehaviour {
 	public static Overlord_Main _Overlord_main;
-	bool pauseChecked = true, isArena = false;
+	bool pauseChecked = true, inGame = false;
 	public int playerID = 0;
 	[SerializeField]
 	GameObject menu;
@@ -19,21 +19,21 @@ public class Overlord_Main : MonoBehaviour {
 		}
 	}
 	void Start () {
-		if (SceneManager.GetActiveScene ().name == "testArena") {
-			isArena = true;
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu") {
+			inGame = true;
 		} else {
-			isArena = false;
+			inGame = false;
 		}
 	}
 	void Update () {
-		if (paused == true)
+		if (paused == true && inGame == false)
 		{
 			if (menu.activeSelf != true)
 			{
 				menu.SetActive(true);
 			}
 		}
-		if (paused == false)
+		if (paused == false && inGame == false)
 		{
 			if (menu.activeSelf != false)
 			{
@@ -41,14 +41,14 @@ public class Overlord_Main : MonoBehaviour {
 			}		
 		}
 		if (Input.GetKeyDown (KeyCode.Escape)) {
-			if (paused == false && pauseChecked == true && isArena == true) {
+			if (paused == false && pauseChecked == true && inGame == true) {
 				Debug.Log ("Paused");
 				paused = true;
 				pauseChecked = false;
 				menu.SetActive (true);
 				Invoke ("PauseChecker", 0.25f);
 			}
-			if (paused == true && pauseChecked == true && isArena == true) {
+			if (paused == true && pauseChecked == true && inGame == true) {
 				Debug.Log ("Not Paused");
 				paused = false;
 				pauseChecked = false;

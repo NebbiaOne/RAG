@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Player_Main : MonoBehaviour {
 	MultipleTargetCamera _Camera;
-	Player_Main _MainEnemy;
 	TextMesh healthText;
 	RaycastHit hit;
 	public static Player_Main _Player_Main;
@@ -13,6 +12,7 @@ public class Player_Main : MonoBehaviour {
 	public float playerHealth = 100f;
 	public bool isTargeted = false;
 	[HideInInspector]
+	public Player_Main _MainEnemy;
 	public bool sensor_01 = false, sensor_02 = false;
 	public GameObject target;
 	void Awake () {

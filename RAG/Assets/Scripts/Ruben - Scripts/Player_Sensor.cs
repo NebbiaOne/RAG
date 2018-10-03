@@ -8,7 +8,6 @@ public class Player_Sensor : MonoBehaviour {
 	}
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.layer == 9 && this.gameObject.tag == "Sensor_01") {
-			//other.gameObject.transform.GetComponent<Renderer> ().material.color = Color.yellow;
 			_Main.sensor_01 = true;
 			if (_Main.target == null) {
 				_Main.target = other.gameObject;
@@ -16,7 +15,6 @@ public class Player_Sensor : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.layer == 9 && this.gameObject.tag == "Sensor_02") {
-			//other.gameObject.transform.GetComponent<Renderer> ().material.color = Color.red;
 			_Main.sensor_02 = true;
 			if (_Main.target != other.gameObject) {
 				_Main.target = other.gameObject;
@@ -32,7 +30,6 @@ public class Player_Sensor : MonoBehaviour {
 	}
 	void OnTriggerExit (Collider other) {
 		if (other.gameObject.layer == 9 && this.gameObject.tag == "Sensor_01") {
-			//other.gameObject.transform.GetComponent<Renderer> ().material.color = Color.white;
 			_Main.sensor_01 = false;
 			if (_Main.target == other.gameObject) {
 				_Main.target = null;
@@ -40,7 +37,6 @@ public class Player_Sensor : MonoBehaviour {
 
 		}
 		if (other.gameObject.layer == 9 && this.gameObject.tag == "Sensor_02") {
-			//other.gameObject.transform.GetComponent<Renderer> ().material.color = Color.yellow;
 			_Main.sensor_02 = false;
 			if (_Main.target == other.gameObject) {
 				_Main.target = null;

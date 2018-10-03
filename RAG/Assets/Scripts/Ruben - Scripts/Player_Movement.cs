@@ -7,10 +7,11 @@ public class Player_Movement : MonoBehaviour {
 	Player rwInput;
 	Rigidbody rbPlayer;
 	Quaternion inputRotation, movementDirection;
-	bool dashWaited = false, dashAble = true;
+	bool dashWaited = false, dashRecharging = false, dashAble = true;
 	float horizontalMovmement, verticalMovement, jumpCounter = 3f;
 	[SerializeField]
-	float movementSpeed = 150, jumpForce = 75, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashWaiter = 0.25f;
+	float movementSpeed = 150, jumpForce = 75, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
+	int dashCharges = 3;
 	void Awake () {
 		_Overlord = Overlord_Main._Overlord_main;
 	}
@@ -31,14 +32,28 @@ public class Player_Movement : MonoBehaviour {
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
 	}
 	void Update () {
+		Debug.Log (dashCharges);
+		//Debug.Log (new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude);
+
+		if (dashCharges != 3 && dashRecharging == false) {
+			dashRecharging = true;
+			StartCoroutine (DashRecharge ());
+		}
 		if (dashWaited == true && dashAble == false) {
 			if (rwInput.GetButton ("Dash")) {
 				dashWaited = false;
 				dashAble = true;
 			}
 		}
-		if (rwInput.GetButton ("Dash") /*&& new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude < maxSpeed + 0.25f*/ && dashAble == true) {
+		if (rwInput.GetButton ("Dash") && dashCharges != 0 && dashAble == true) {
 			dashAble = false;
+			dashCharges -= 1;
+			if (new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude > maxSpeed) {
+				if (dashRecharging == false) {
+					dashRecharging = true;
+					StartCoroutine (DashRecharge ());
+				}
+			}
 			StartCoroutine (Dash ());
 		}
 		if (Mathf.Round (rbPlayer.velocity.y * 1000) / 1000 == 0f) {
@@ -77,7 +92,13 @@ public class Player_Movement : MonoBehaviour {
 		} else {
 			rbPlayer.AddForce (new Vector3 (horizontalMovmement * dashStrength, 0f, verticalMovement * dashStrength), ForceMode.Impulse);
 		}
-		yield return new WaitForSeconds (dashWaiter);
+		yield return new WaitForSeconds (dashUseWaiter);
 		dashWaited = true;
+	}
+	IEnumerator DashRecharge () {
+		Debug.Log ("Recharging");
+		yield return new WaitForSeconds (dashRechargeWaiter);
+		dashCharges += 1;
+		dashRecharging = false;
 	}
 }
