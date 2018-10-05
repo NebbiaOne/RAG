@@ -22,7 +22,7 @@ public class PlayerGroundPosParticle : MonoBehaviour {
 		{
 
 			GroundPosParticle.transform.position= GroundPosHitPoint.point;
-			Debug.Log(GroundPosHitPoint.point);
+			//Debug.Log(GroundPosHitPoint.point);
 		}
 		
 	}
