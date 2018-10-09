@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
+using UnityEngine.UI;
 public class Player_Movement : MonoBehaviour {
 	Overlord_Main _Overlord;
 	Player rwInput;
 	Rigidbody rbPlayer;
+	Image charge_01, charge_02, charge_03;
 	Quaternion inputRotation, movementDirection;
 	bool dashWaited = false, dashRecharging = false, dashAble = true;
 	float horizontalMovmement, verticalMovement, jumpCounter = 3f;
+	[SerializeField]
+	GameObject hud;
 	[SerializeField]
 	float movementSpeed = 150, jumpForce = 75, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
 	int dashCharges = 3;
@@ -16,6 +20,10 @@ public class Player_Movement : MonoBehaviour {
 		_Overlord = Overlord_Main._Overlord_main;
 	}
 	void Start () {
+		charge_01 = hud.transform.GetChild (0).gameObject.GetComponent<Image> ();
+		charge_02 = hud.transform.GetChild (1).gameObject.GetComponent<Image> ();
+		charge_03 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
+
 		if (gameObject.tag == "Player_01") {
 			rwInput = ReInput.players.GetPlayer (0);
 		}
@@ -32,9 +40,28 @@ public class Player_Movement : MonoBehaviour {
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
 	}
 	void Update () {
-		//Debug.Log (dashCharges);
-		//Debug.Log (new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude);
-
+		switch (dashCharges) {
+			case 0:
+				charge_01.enabled = false;
+				charge_02.enabled = false;
+				charge_03.enabled = false;
+				break;
+			case 1:
+				charge_01.enabled = true;
+				charge_02.enabled = false;
+				charge_03.enabled = false;
+				break;
+			case 2:
+				charge_01.enabled = true;
+				charge_02.enabled = true;
+				charge_03.enabled = false;
+				break;
+			case 3:
+				charge_01.enabled = true;
+				charge_02.enabled = true;
+				charge_03.enabled = true;
+				break;
+		}
 		if (dashCharges != 3 && dashRecharging == false) {
 			dashRecharging = true;
 			StartCoroutine (DashRecharge ());
