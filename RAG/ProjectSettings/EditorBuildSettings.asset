@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ruben - Testing/testArena.unity
     guid: 20c543ab2c4af1b47b9f4bfb9bbc931f
+  - enabled: 1
+    path: Assets/Scenes/Arenas/Arena_01.unity
+    guid: 23eac37f0dbab8447b2ebf2dac1be25f
   m_configObjects: {}

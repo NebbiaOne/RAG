@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114769815438572428}
   - component: {fileID: 114640118377868772}
   - component: {fileID: 114031924396592368}
+  - component: {fileID: 114470319073612794}
   m_Layer: 9
   m_Name: Player_04.2
   m_TagString: Player_04
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1379277283887372}
   m_LocalRotation: {x: 6.261657e-14, y: -1, z: 0.0000000218557, w: 0.0000029504295}
-  m_LocalPosition: {x: 2.1000004, y: 2.6120563, z: -5.95}
+  m_LocalPosition: {x: 9.8, y: 23.7, z: -6.3}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 4009649947500112}
@@ -228,7 +229,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755390135134982}
   m_LocalRotation: {x: -0.0000000218557, y: -0, z: -1.8671249e-15, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0246, z: -0}
+  m_LocalPosition: {x: 0, y: 0.0327, z: -0}
   m_LocalScale: {x: -0.00046419998, y: 0.00046419998, z: 0.00046419998}
   m_Children: []
   m_Father: {fileID: 4183017502995412}
@@ -570,6 +571,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012bcf68aeee78d45a60ec595c6ca253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114470319073612794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1379277283887372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c7f5cf36bdeca4189c453682832d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroundPosParticle: {fileID: 0}
+  GroundPosHitPoint: {x: 0, y: 0, z: 0}
+  RayOrigin: {fileID: 1796335835934120}
 --- !u!114 &114640118377868772
 MonoBehaviour:
   m_ObjectHideFlags: 1

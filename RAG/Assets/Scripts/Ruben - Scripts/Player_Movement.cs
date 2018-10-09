@@ -32,7 +32,7 @@ public class Player_Movement : MonoBehaviour {
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
 	}
 	void Update () {
-		Debug.Log (dashCharges);
+		//Debug.Log (dashCharges);
 		//Debug.Log (new Vector2 (rbPlayer.velocity.x, rbPlayer.velocity.z).magnitude);
 
 		if (dashCharges != 3 && dashRecharging == false) {

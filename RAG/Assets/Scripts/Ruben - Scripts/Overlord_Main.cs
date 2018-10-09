@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Overlord_Main : MonoBehaviour {
 	public static Overlord_Main _Overlord_main;
+	GameObject overlord;
 	bool pauseChecked = true, inGame = false;
 	public int playerID = 0;
 	[SerializeField]
@@ -11,34 +13,34 @@ public class Overlord_Main : MonoBehaviour {
 	[HideInInspector]
 	public bool pausable = true, paused = false;
 	void Awake () {
-		if (this.gameObject != null) {
-			DontDestroyOnLoad (this.gameObject);
-			_Overlord_main = this;
-		} else {
-			Destroy (this.gameObject);
-		}
+		overlord = this.gameObject;
+		_Overlord_main = this;
 	}
 	void Start () {
-		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu") {
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
-		} else {
+		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
 	}
 	void Update () {
-		if (paused == true && inGame == false)
-		{
-			if (menu.activeSelf != true)
-			{
-				menu.SetActive(true);
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
+			inGame = true;
+		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
+			inGame = false;
+		}
+		if (inGame == true && menu == null) {
+			menu = GameObject.FindWithTag ("Menu");
+		}
+		if (inGame == true && paused == true) {
+			if (menu.activeSelf != true) {
+				menu.SetActive (true);
 			}
 		}
-		if (paused == false && inGame == false)
-		{
-			if (menu.activeSelf != false)
-			{
-				menu.SetActive(false);
-			}		
+		if (inGame == true && paused == false) {
+			if (menu.activeSelf != false) {
+				menu.SetActive (false);
+			}
 		}
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (paused == false && pauseChecked == true && inGame == true) {

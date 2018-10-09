@@ -41,7 +41,7 @@ public class Player_Combat : MonoBehaviour {
 		if (rwInput.GetAxis ("Attack") > 0f && attackAble == true && _Main.blocking == false) {
 			if (_Main.target != null) {
 				hitDirection = transform.position + (this.transform.position - _Main.target.transform.position) * -25f;
-				Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
+				//Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
 				if (Physics.Raycast (transform.position, hitDirection * 1f, out hit, 5f, layerMask)) {
 					if (hit.collider.tag == "Shield") {
 						Debug.Log ("Shield");
@@ -54,7 +54,7 @@ public class Player_Combat : MonoBehaviour {
 				}
 				if (attacking != true) {
 					attacking = true;
-				}
+				} 
 			}
 			attackAble = false;
 			gameObject.transform.GetChild (0).gameObject.SetActive (true);

@@ -12,6 +12,7 @@ TagManager:
   - Shield
   - Sensor_01
   - Sensor_02
+  - Menu
   layers:
   - Default
   - TransparentFX
