@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
 public class Player_Combat : MonoBehaviour {
+	Overlord_Main _Overlord;
 	Player_Main _Main;
 	Player rwInput;
 	RaycastHit hit;
@@ -13,6 +14,7 @@ public class Player_Combat : MonoBehaviour {
 	float attackSpeed = 0.5f, blockTime = 2f, blockCooldown = 1f, knockback = 5f;
 	public float playerHealth = 100;
 	void Start () {
+		_Overlord = Overlord_Main._Overlord_main;
 		_Main = transform.GetComponent<Player_Main> ();
 		layerMask = ~layerMask;
 		if (gameObject.tag == "Player_01") {
@@ -29,54 +31,56 @@ public class Player_Combat : MonoBehaviour {
 		}
 	}
 	void Update () {
-		if (rwInput.GetButtonDown ("Action")) {
-			Debug.Log ("Action!");
-		}
-		if (attackWaited == true && attackAble == false) {
-			if (rwInput.GetAxis ("Attack") == 0f) {
-				attackWaited = false;
-				attackAble = true;
+		if (_Overlord.playAble == true) {
+			if (rwInput.GetButtonDown ("Action")) {
+				Debug.Log ("Action!");
 			}
-		}
-		if (rwInput.GetAxis ("Attack") > 0f && attackAble == true && _Main.blocking == false) {
-			if (_Main.target != null) {
-				hitDirection = transform.position + (this.transform.position - _Main.target.transform.position) * -25f;
-				//Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
-				if (Physics.Raycast (transform.position, hitDirection * 1f, out hit, 5f, layerMask)) {
-					if (hit.collider.tag == "Shield") {
-						Debug.Log ("Shield");
-						_Main.target.transform.GetComponent<Rigidbody> ().AddForce (hitDirection * knockback / 10, ForceMode.Impulse);
-					} else if (hit.collider.tag != "Shield") {
-						Debug.Log ("No Shield");
-						_Main.target.transform.GetComponent<Rigidbody> ().AddForce (hitDirection * (knockback - (knockback * (_Main._MainEnemy.playerHealth / 100f))), ForceMode.Impulse);
-						_Main.DamagePlayer ();
+			if (attackWaited == true && attackAble == false) {
+				if (rwInput.GetAxis ("Attack") == 0f) {
+					attackWaited = false;
+					attackAble = true;
+				}
+			}
+			if (rwInput.GetAxis ("Attack") > 0f && attackAble == true && _Main.blocking == false) {
+				if (_Main.target != null) {
+					hitDirection = transform.position + (this.transform.position - _Main.target.transform.position) * -25f;
+					//Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
+					if (Physics.Raycast (transform.position, hitDirection * 1f, out hit, 5f, layerMask)) {
+						if (hit.collider.tag == "Shield") {
+							Debug.Log ("Shield");
+							_Main.target.transform.GetComponent<Rigidbody> ().AddForce (hitDirection * knockback / 10, ForceMode.Impulse);
+						} else if (hit.collider.tag != "Shield") {
+							Debug.Log ("No Shield");
+							_Main.target.transform.GetComponent<Rigidbody> ().AddForce (hitDirection * (knockback - (knockback * (_Main._MainEnemy.playerHealth / 100f))), ForceMode.Impulse);
+							_Main.DamagePlayer ();
+						}
+					}
+					if (attacking != true) {
+						attacking = true;
 					}
 				}
-				if (attacking != true) {
-					attacking = true;
-				} 
-			}
-			attackAble = false;
-			gameObject.transform.GetChild (0).gameObject.SetActive (true);
-			StartCoroutine (AttackWaiter ());
-		} else if (rwInput.GetAxis ("Attack") <= 0f || attackAble == false) {
-			if (attacking != false) {
-				attacking = false;
-			}
-			gameObject.transform.GetChild (0).gameObject.SetActive (false);
+				attackAble = false;
+				gameObject.transform.GetChild (0).gameObject.SetActive (true);
+				StartCoroutine (AttackWaiter ());
+			} else if (rwInput.GetAxis ("Attack") <= 0f || attackAble == false) {
+				if (attacking != false) {
+					attacking = false;
+				}
+				gameObject.transform.GetChild (0).gameObject.SetActive (false);
 
-		}
-		if (rwInput.GetAxis ("Block") > 0f && blockAble == true && attacking == false) {
-			if (_Main.blocking != true) {
-				_Main.blocking = true;
 			}
-			gameObject.transform.GetChild (1).gameObject.SetActive (true);
-			StartCoroutine (BlockWaiter ());
-		} else if (rwInput.GetAxis ("Block") <= 0f || blockAble == false) {
-			if (_Main.blocking != false) {
-				_Main.blocking = false;
+			if (rwInput.GetAxis ("Block") > 0f && blockAble == true && attacking == false) {
+				if (_Main.blocking != true) {
+					_Main.blocking = true;
+				}
+				gameObject.transform.GetChild (1).gameObject.SetActive (true);
+				StartCoroutine (BlockWaiter ());
+			} else if (rwInput.GetAxis ("Block") <= 0f || blockAble == false) {
+				if (_Main.blocking != false) {
+					_Main.blocking = false;
+				}
+				gameObject.transform.GetChild (1).gameObject.SetActive (false);
 			}
-			gameObject.transform.GetChild (1).gameObject.SetActive (false);
 		}
 	}
 	IEnumerator AttackWaiter () {

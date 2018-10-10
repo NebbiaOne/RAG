@@ -6,8 +6,8 @@ public class Loader_Main : MonoBehaviour {
 	public static Loader_Main _Loader_Main;
 	Overlord_Main _Overlord;
 	AsyncOperation asyncLoad;
-	string nextScene;
 	bool enumerating = false;
+	public string nextScene;
 	void Awake () {
 		_Loader_Main = this;
 	}
@@ -21,19 +21,21 @@ public class Loader_Main : MonoBehaviour {
 		}
 	}
 	IEnumerator LoadLevel () {
-		asyncLoad = SceneManager.LoadSceneAsync (nextScene);
-		while (!asyncLoad.isDone) {
-			if (asyncLoad.allowSceneActivation != false) {
-				asyncLoad.allowSceneActivation = false;
+		if (nextScene != null && nextScene != "") {
+			asyncLoad = SceneManager.LoadSceneAsync (nextScene);
+			while (!asyncLoad.isDone) {
+				if (asyncLoad.allowSceneActivation != false) {
+					asyncLoad.allowSceneActivation = false;
+				}
+				if (asyncLoad.progress >= 0.9f) {
+					yield return new WaitForSeconds (1f);
+					enumerating = false;
+					nextScene = null;
+					Destroy (this.gameObject);
+					asyncLoad.allowSceneActivation = true;
+				}
+				yield return null;
 			}
-			if (asyncLoad.progress >= 0.9f) {
-				yield return new WaitForSeconds (1f);
-				enumerating = false;
-				nextScene = null;
-				Destroy (this.gameObject);
-				asyncLoad.allowSceneActivation = true;
-			}
-			yield return null;
 		}
 	}
 	public void Load_MainMenu () {
@@ -44,7 +46,7 @@ public class Loader_Main : MonoBehaviour {
 	public void Load_CharacterSelection () {
 		DontDestroyOnLoad (this.gameObject);
 		nextScene = "CharacterSelection";
-		SceneManager.LoadScene("Loading");
+		SceneManager.LoadScene ("Loading");
 	}
 	public void Load_Arena () {
 		DontDestroyOnLoad (this.gameObject);

@@ -31,23 +31,21 @@ public class PlatformDropper : MonoBehaviour {
                     Debug.Log("Created: " + CurrentPlatform.name + " " + CurrentPlatform.GetInstanceID());
 					TempPlatform=CurrentPlatform;
                      //CurrentPlatform.transform.position += Vector3.up * Time.deltaTime;
-
-                    // CurrentPlatform.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -10, 0), Time.deltaTime * 5);
+                     //CurrentPlatform.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -10, 0), Time.deltaTime * 5);
                      //CurrentPlatform.transform.Translate(CurrentPlatform.transform.position.Vector3.up * -Time.deltaTime, Space.World);
-                   //CurrentPlatform.transform.position = Vector3.MoveTowards(CurrentPlatform.transform.position,new Vector3(CurrentPlatform.transform.position.x,-50,CurrentPlatform.transform.position.z),1);
-				  	StartCoroutine(Drop());
+                     //CurrentPlatform.transform.position = Vector3.MoveTowards(CurrentPlatform.transform.position,new Vector3(CurrentPlatform.transform.position.x,-50,CurrentPlatform.transform.position.z),1);
+                    Drop();
                 }
-
                 spawnList.RemoveAt(randomIndex);
                 yield return new WaitForSeconds(5);
             }
         }
 	}
-	IEnumerator Drop()
+	void Drop()
 	{
         //CurrentPlatform.transform.Translate(CurrentPlatform.transform.up * -Time.deltaTime, Space.World);
-        TempPlatform.transform.position = new Vector3(0,-20,0);
-        yield return null;
+        //TempPlatform.transform.position = new Vector3(0,-20,0);
+        TempPlatform.GetComponent<Rigidbody>().isKinematic = false;
 	}
 	
 }
