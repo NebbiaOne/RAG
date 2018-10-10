@@ -41,9 +41,10 @@ public class Loader_Main : MonoBehaviour {
 		nextScene = "MainMenu";
 		SceneManager.LoadScene ("Loading");
 	}
-	public void Load_TestArena () {
-		nextScene = "testArena";
-		SceneManager.LoadScene ("Loading");
+	public void Load_CharacterSelection () {
+		DontDestroyOnLoad (this.gameObject);
+		nextScene = "CharacterSelection";
+		SceneManager.LoadScene("Loading");
 	}
 	public void Load_Arena () {
 		DontDestroyOnLoad (this.gameObject);

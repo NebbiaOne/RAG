@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Ruben - Testing/MainMenu.unity
+    path: Assets/Scenes/Final Scenes/MainMenu.unity
     guid: 3c4e53bb42861bf49885ad28f25e2f4e
   - enabled: 1
-    path: Assets/Scenes/Ruben - Testing/Loading.unity
+    path: Assets/Scenes/Final Scenes/Loading.unity
     guid: e10b3c7e29ce3cc4796fc1410a05f97c
   - enabled: 1
-    path: Assets/Scenes/Ruben - Testing/testArena.unity
-    guid: 20c543ab2c4af1b47b9f4bfb9bbc931f
+    path: Assets/Scenes/Final Scenes/CharacterSelection.unity
+    guid: 075a0ea63fcb9d947b6ec6f4a601cdb7
   - enabled: 1
-    path: Assets/Scenes/Arenas/Arena_01.unity
+    path: Assets/Scenes/Final Scenes/Arena_01.unity
     guid: 23eac37f0dbab8447b2ebf2dac1be25f
   m_configObjects: {}

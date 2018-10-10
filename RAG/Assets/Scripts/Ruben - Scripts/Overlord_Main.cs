@@ -7,10 +7,10 @@ public class Overlord_Main : MonoBehaviour {
 	public static Overlord_Main _Overlord_main;
 	GameObject overlord;
 	bool pauseChecked = true, inGame = false;
-	public int playerID = 0;
 	[SerializeField]
 	GameObject menu;
 	[HideInInspector]
+	public int playerID = 0;
 	public bool pausable = true, paused = false;
 	void Awake () {
 		overlord = this.gameObject;
