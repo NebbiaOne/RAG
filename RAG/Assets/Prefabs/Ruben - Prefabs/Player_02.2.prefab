@@ -473,7 +473,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430573637368094}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 5aebd78446db6fb4e8e22f705a892cae, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -525,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efe8687cbd8bc543acc8d129d8a7155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
   movementSpeed: 200
   jumpForce: 150
   rotationSpeed: 50
