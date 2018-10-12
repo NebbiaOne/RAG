@@ -8,6 +8,7 @@ public class PlatformDropper : MonoBehaviour {
 	
 	private GameObject CurrentPlatform;
 	private GameObject TempPlatform;
+    public GameObject PlatformDangerParticle;
     void Start()
     {
 		StartCoroutine(StartDrop());
@@ -30,14 +31,18 @@ public class PlatformDropper : MonoBehaviour {
                     CurrentPlatform = (spawnList[randomIndex]);
                     Debug.Log("Created: " + CurrentPlatform.name + " " + CurrentPlatform.GetInstanceID());
 					TempPlatform=CurrentPlatform;
-                     //CurrentPlatform.transform.position += Vector3.up * Time.deltaTime;
-                     //CurrentPlatform.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -10, 0), Time.deltaTime * 5);
-                     //CurrentPlatform.transform.Translate(CurrentPlatform.transform.position.Vector3.up * -Time.deltaTime, Space.World);
-                     //CurrentPlatform.transform.position = Vector3.MoveTowards(CurrentPlatform.transform.position,new Vector3(CurrentPlatform.transform.position.x,-50,CurrentPlatform.transform.position.z),1);
-                    Drop();
+                    //CurrentPlatform.transform.position += Vector3.up * Time.deltaTime;
+                    //CurrentPlatform.transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, -10, 0), Time.deltaTime * 5);
+                    //CurrentPlatform.transform.Translate(CurrentPlatform.transform.position.Vector3.up * -Time.deltaTime, Space.World);
+                    //CurrentPlatform.transform.position = Vector3.MoveTowards(CurrentPlatform.transform.position,new Vector3(CurrentPlatform.transform.position.x,-50,CurrentPlatform.transform.position.z),1);
+                    Debug.Log("YO");
+                    PlatformDangerParticle.transform.position = TempPlatform.transform.position;;
+                    
                 }
                 spawnList.RemoveAt(randomIndex);
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(3);
+                
+                Drop();
             }
         }
 	}
