@@ -97,10 +97,10 @@ public class Player_Main : MonoBehaviour {
 			if (healthText.text != playerHealth.ToString ()) {
 				healthText.text = playerHealth.ToString ();
 			}
-			if (playerHealth <= 0f) {
+			/*if (playerHealth <= 0f) {
 				playerLives -= 1;
 				playerHealth = 100;
-			}
+			}*/
 			if (playerLives == 0) {
 				gameObject.SetActive (false);
 				hud.SetActive (false);
