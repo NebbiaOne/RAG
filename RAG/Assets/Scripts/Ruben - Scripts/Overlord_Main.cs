@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Overlord_Main : MonoBehaviour {
 	public static Overlord_Main _Overlord_main;
 	GameObject overlord;
-	bool pauseChecked = true, inGame = false, choiceActive = false;
-	public GameObject menuMain;
-	public GameObject menuChoice;
+	bool pauseChecked = true, inGame = false;
+	[SerializeField]
+	GameObject menu;
 	[HideInInspector]
 	public int playersJoined = 0, playersReady = 0;
 	public int playerID = 0;
@@ -19,26 +19,16 @@ public class Overlord_Main : MonoBehaviour {
 		_Overlord_main = this;
 	}
 	void Start () {
-		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenuMain" && inGame != true) {
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
-		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuMain") && inGame != false) {
+		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
-		}
-		if (menuMain == null && inGame == false) {
-			menuMain = GameObject.Find ("Menu_Game");
-		}
-		if (menuChoice == null && inGame == false) {
-			menuChoice = GameObject.Find ("Menu_Game_Choice");
-		}
-		if (menuChoice.activeSelf != false)
-		{
-			menuChoice.SetActive(false);
 		}
 	}
 	void Update () {
-		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenuMain" && inGame != true) {
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
-		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuMain") && inGame != false) {
+		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
 		if (SceneManager.GetActiveScene ().name == "Arena_01" && playAble != true) {
@@ -47,17 +37,17 @@ public class Overlord_Main : MonoBehaviour {
 			playAble = false;
 
 		}
-		if (inGame == true && menuMain == null) {
-			menuMain = GameObject.FindWithTag ("MenuMain");
+		if (inGame == true && menu == null) {
+			menu = GameObject.FindWithTag ("Menu");
 		}
 		if (inGame == true && paused == true) {
-			if (menuMain.activeSelf != true && choiceActive == false) {
-				menuMain.SetActive (true);
+			if (menu.activeSelf != true) {
+				menu.SetActive (true);
 			}
 		}
 		if (inGame == true && paused == false) {
-			if (menuMain.activeSelf != false) {
-				menuMain.SetActive (false);
+			if (menu.activeSelf != false) {
+				menu.SetActive (false);
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -65,29 +55,19 @@ public class Overlord_Main : MonoBehaviour {
 				Debug.Log ("Paused");
 				paused = true;
 				pauseChecked = false;
-				menuMain.SetActive (true);
+				menu.SetActive (true);
 				Invoke ("PauseChecker", 0.25f);
 			}
 			if (paused == true && pauseChecked == true && inGame == true) {
 				Debug.Log ("Not Paused");
 				paused = false;
 				pauseChecked = false;
-				menuMain.SetActive (false);
+				menu.SetActive (false);
 				Invoke ("PauseChecker", 0.25f);
 			}
 		}
 	}
 	void PauseChecker () {
 		pauseChecked = true;
-	}
-	public void MenuChoiceVisible () {
-		choiceActive = true;
-		menuChoice.SetActive(true);
-		menuMain.SetActive(false);
-	}
-	public void MenuMainVisible () {
-		choiceActive = false;
-		menuChoice.SetActive (false);
-		menuMain.SetActive (true);
 	}
 }

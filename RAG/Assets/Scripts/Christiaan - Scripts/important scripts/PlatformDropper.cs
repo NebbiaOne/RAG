@@ -44,6 +44,8 @@ public class PlatformDropper : MonoBehaviour {
                 
                 Drop();
             }
+            PlatformDangerParticle.transform.position = new Vector3(0,-10,0);
+        
         }
 	}
 	void Drop()
