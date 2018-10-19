@@ -38,10 +38,15 @@ public class Loader_Main : MonoBehaviour {
 			}
 		}
 	}
-	public void Load_MainMenu () {
+	public void Load_Initiate () {
 		DontDestroyOnLoad (this.gameObject);
+		SceneManager.LoadScene("Loading");
+	}
+	public void Load_MainMenu () {
 		nextScene = "MainMenu";
-		SceneManager.LoadScene ("Loading");
+		_Overlord.menuChoice.SetActive(true);
+		_Overlord.menuChoice.SetActive(false);
+		//SceneManager.LoadScene ("Loading");
 	}
 	public void Load_CharacterSelection () {
 		DontDestroyOnLoad (this.gameObject);

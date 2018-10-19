@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4233119563309270}
   - component: {fileID: 114145639917248772}
-  - component: {fileID: 114537701744951382}
+  - component: {fileID: 114304195841322918}
   m_Layer: 0
   m_Name: Overlord
   m_TagString: Untagged
@@ -52,9 +52,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c0efd3f66ac3a418c48425b7872da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  menuMain: {fileID: 0}
+  menuChoice: {fileID: 0}
+  playersJoined: 0
+  playersReady: 0
+  playerID: 0
+  playAble: 0
+  pausable: 1
   paused: 0
---- !u!114 &114537701744951382
+  player_01: 0
+  player_02: 0
+  player_03: 0
+  player_04: 0
+--- !u!114 &114304195841322918
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,3 +75,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc04ba357ee5d534aa58e1bda1a4ebe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: 
