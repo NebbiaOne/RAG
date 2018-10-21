@@ -8142,14 +8142,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114145639917248772, guid: f0e2e3e8e85dcd04299ac7177b3f0fe5,
         type: 2}
-      propertyPath: menuChoice
-      value: 
-      objectReference: {fileID: 284964215}
-    - target: {fileID: 114145639917248772, guid: f0e2e3e8e85dcd04299ac7177b3f0fe5,
-        type: 2}
       propertyPath: menuGame
       value: 
       objectReference: {fileID: 2107301158}
+    - target: {fileID: 114145639917248772, guid: f0e2e3e8e85dcd04299ac7177b3f0fe5,
+        type: 2}
+      propertyPath: menuChoice
+      value: 
+      objectReference: {fileID: 284964215}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0e2e3e8e85dcd04299ac7177b3f0fe5, type: 2}
   m_IsPrefabAsset: 0
