@@ -161,6 +161,8 @@ ModelImporter:
     100310: WGT-VIS-thigh_pole_ik_R
     100312: WGT-VIS-upper_arm_pole_ik_L
     100314: WGT-VIS-upper_arm_pole_ik_R
+    100316: SwordBroken
+    100318: SwordBrokenSculpt
     400000: chest
     400002: DEF-chest
     400004: DEF-foot_L
@@ -319,6 +321,8 @@ ModelImporter:
     400310: WGT-VIS-thigh_pole_ik_R
     400312: WGT-VIS-upper_arm_pole_ik_L
     400314: WGT-VIS-upper_arm_pole_ik_R
+    400316: SwordBroken
+    400318: SwordBrokenSculpt
     2100000: unnamed
     2100002: BodyBase_Material
     2100004: EyeEmis
@@ -326,6 +330,7 @@ ModelImporter:
     2100008: Material_005
     2100010: Material_004
     2100012: Material_002
+    2100014: BrokenSword
     2300000: Retopo_001
     2300002: Retopo_002
     2300004: Retopo_003
@@ -393,6 +398,8 @@ ModelImporter:
     2300128: WGT-VIS-thigh_pole_ik_R
     2300130: WGT-VIS-upper_arm_pole_ik_L
     2300132: WGT-VIS-upper_arm_pole_ik_R
+    2300134: SwordBroken
+    2300136: SwordBrokenSculpt
     3300000: Retopo_001
     3300002: Retopo_002
     3300004: Retopo_003
@@ -460,6 +467,8 @@ ModelImporter:
     3300128: WGT-VIS-thigh_pole_ik_R
     3300130: WGT-VIS-upper_arm_pole_ik_L
     3300132: WGT-VIS-upper_arm_pole_ik_R
+    3300134: SwordBroken
+    3300136: SwordBrokenSculpt
     4300000: WGT-root
     4300002: WGT-hand_ik_R
     4300004: WGT-elbow_target_ik_R
@@ -528,6 +537,8 @@ ModelImporter:
     4300130: SculptFinal
     4300132: Retopo_004
     4300134: Retopo_001
+    4300136: SwordBrokenSculpt
+    4300138: SwordBroken
     7400000: Default Take
     9500000: //RootNode
     13700000: Retopo
