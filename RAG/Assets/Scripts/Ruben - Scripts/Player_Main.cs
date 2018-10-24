@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player_Main : MonoBehaviour {
+	public static Player_Main _Player_Main;
 	Overlord_Main _Overlord;
 	Overlord_Ghost _Ghost;
 	MultipleTargetCamera _Camera;
@@ -11,10 +12,9 @@ public class Player_Main : MonoBehaviour {
 	Rigidbody rbPlayer;
 	Image life_01, life_02, life_03;
 	[SerializeField]
-	GameObject preciseSensor, hud;
-	public static Player_Main _Player_Main;
+	GameObject preciseSensor;
 	public Player_Main _MainEnemy;
-	public GameObject target;
+	public GameObject target, hud;
 	public int playerLives = 3;
 	public float playerHealth = 100f;
 	public bool isTargeted = false, blocking = false;

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Player_Movement : MonoBehaviour {
 	Overlord_Main _Overlord;
+	Player_Main _PlayerMain;
 	Player rwInput;
 	Rigidbody rbPlayer;
 	Image charge_01, charge_02, charge_03;
@@ -20,6 +21,8 @@ public class Player_Movement : MonoBehaviour {
 	int dashCharges = 3;
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
+		_PlayerMain = Player_Main._Player_Main;
+		hud = _PlayerMain.hud;
 		if (gameObject.tag == "Player_01") {
 			rwInput = ReInput.players.GetPlayer (0);
 		}
