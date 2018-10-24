@@ -35,6 +35,9 @@ public class Player_Main : MonoBehaviour {
 					hud.SetActive (false);
 				}
 			}
+			if (hud == null) {
+				hud = GameObject.Find ("HUD_Player_01");
+			}
 		}
 		if (gameObject.tag == "Player_02") {
 			if (_Ghost.player_02 == false) {
@@ -42,6 +45,9 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			}
+			if (hud == null) {
+				hud = GameObject.Find ("HUD_Player_02");
 			}
 		}
 		if (gameObject.tag == "Player_03") {
@@ -51,6 +57,9 @@ public class Player_Main : MonoBehaviour {
 					hud.SetActive (false);
 				}
 			}
+			if (hud == null) {
+				hud = GameObject.Find ("HUD_Player_03");
+			}
 		}
 		if (gameObject.tag == "Player_04") {
 			if (_Ghost.player_04 == false) {
@@ -58,6 +67,9 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			}
+			if (hud == null) {
+				hud = GameObject.Find ("HUD_Player_04");
 			}
 		}
 	}

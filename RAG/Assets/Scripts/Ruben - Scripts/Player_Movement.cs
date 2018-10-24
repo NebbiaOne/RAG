@@ -15,7 +15,8 @@ public class Player_Movement : MonoBehaviour {
 	[SerializeField]
 	GameObject hud;
 	[SerializeField]
-	float movementSpeed = 150, jumpForce = 75, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
+	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
+	[SerializeField]
 	int dashCharges = 3;
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
