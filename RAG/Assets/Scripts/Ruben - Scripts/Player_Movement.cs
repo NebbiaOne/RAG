@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour {
 	Quaternion inputRotation, movementDirection;
 	bool dashWaited = false, dashRecharging = false, dashAble = true;
 	bool p_01 = false, p_02 = false, p_03 = false, p_04 = false;
-	float horizontalMovmement, verticalMovement, jumpCounter = 3f;
+	float horizontalMovmement, verticalMovement, jumpCounter = 1f;
 	[SerializeField]
 	GameObject hud;
 	[SerializeField]
@@ -88,7 +88,7 @@ public class Player_Movement : MonoBehaviour {
 				StartCoroutine (Dash ());
 			}
 			if (Mathf.Round (rbPlayer.velocity.y * 1000) / 1000 == 0f) {
-				jumpCounter = 3f;
+				jumpCounter = 1f;
 			}
 			if (rwInput.GetAxis ("CL_Horizontal") == 0 && rwInput.GetAxis ("CL_Vertical") == 0 && rwInput.GetAxis ("CM_Horizontal") == 0 && rwInput.GetAxis ("CM_Vertical") == 0) {
 				transform.rotation = Quaternion.RotateTowards (transform.rotation, inputRotation, rotationSpeed);

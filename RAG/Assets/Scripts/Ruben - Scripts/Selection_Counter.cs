@@ -20,7 +20,7 @@ public class Selection_Counter : MonoBehaviour {
 			counterText.enabled = true;
 			StartCoroutine (CountDown ());
 		}
-		if (_Overlord.playersReady < _Overlord.playersJoined) {
+		if (_Overlord.playersReady < _Overlord.playersJoined || _Overlord.playersJoined == 0 ) {
 			countDownStarted = false;
 			allConnected = false;
 			counterText.text = "3";
@@ -46,6 +46,7 @@ public class Selection_Counter : MonoBehaviour {
 		counterText.text = "0";
 		if (allConnected == true) {
 			_Loader.Load_Arena ();
+			_Loader.Initiate_Load();	
 		} else {
 			yield break;
 		}

@@ -39,23 +39,20 @@ public class Loader_Main : MonoBehaviour {
 		}
 	}
 	public void Initiate_Load () {
-		DontDestroyOnLoad(this.gameObject);
-		SceneManager.LoadScene("Loading");
+		DontDestroyOnLoad (this.gameObject);
+		SceneManager.LoadScene ("Loading");
 	}
 	public void Load_MainMenu () {
 		DontDestroyOnLoad (this.gameObject);
 		nextScene = "MainMenu";
-		//SceneManager.LoadScene ("Loading");
 	}
 	public void Load_CharacterSelection () {
 		DontDestroyOnLoad (this.gameObject);
 		nextScene = "CharacterSelection";
-		//SceneManager.LoadScene ("Loading");
 	}
 	public void Load_Arena () {
 		DontDestroyOnLoad (this.gameObject);
 		nextScene = "Arena_01";
-		//SceneManager.LoadScene ("Loading");
 	}
 	public void Load_Quit () {
 		Application.Quit ();

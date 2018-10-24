@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
 public class Selection_Stands : MonoBehaviour {
+	/* - Remember to tag stands with the player tags
+	 */
 	Overlord_Main _Overlord;
 	Overlord_Ghost _Ghost;
 	Player rwInput;
@@ -33,41 +35,54 @@ public class Selection_Stands : MonoBehaviour {
 		player.SetActive (false);
 	}
 	void Update () {
-		if (indicator_Ready.transform.GetComponent<Renderer> ().material.color != col_pink && ready == true) {
-			indicator_Ready.transform.GetComponent<Renderer> ().material.color = col_pink;
-		} else if (indicator_Ready.transform.GetComponent<Renderer> ().material.color != col_white && ready == false) {
-			indicator_Ready.transform.GetComponent<Renderer> ().material.color = col_white;
-		}
-		if (rwInput.GetButton ("C_Jump") && ready == false) {
-			if (readyUpAble == false && indicator_01.activeSelf != false) {
-				_Overlord.playersJoined += 1;
-				player.SetActive (true);
-				indicator_01.SetActive (false);
-				Invoke ("Readying", 0.25f);
-				if (gameObject.tag == "Player_01") {
-					_Ghost.player_01 = true;
+		if (_Overlord.paused == false) {
+			if (indicator_Ready.transform.GetComponent<Renderer> ().material.color != col_pink && ready == true) {
+				indicator_Ready.transform.GetComponent<Renderer> ().material.color = col_pink;
+			} else if (indicator_Ready.transform.GetComponent<Renderer> ().material.color != col_white && ready == false) {
+				indicator_Ready.transform.GetComponent<Renderer> ().material.color = col_white;
+			}
+			if (rwInput.GetButton ("C_Jump") && ready == false) {
+				if (readyUpAble == false && indicator_01.activeSelf != false) {
+					_Overlord.playersJoined += 1;
+					player.SetActive (true);
+					indicator_01.SetActive (false);
+					Invoke ("Readying", 0.25f);
+					if (gameObject.tag == "Player_01") {
+						_Ghost.player_01 = true;
+					}
+					if (gameObject.tag == "Player_02") {
+						_Ghost.player_02 = true;
+					}
+					if (gameObject.tag == "Player_03") {
+						_Ghost.player_03 = true;
+					}
+					if (gameObject.tag == "Player_04") {
+						_Ghost.player_04 = true;
+					}
 				}
-				if (gameObject.tag == "Player_02") {
-					_Ghost.player_02 = true;
-				}
-				if (gameObject.tag == "Player_03") {
-					_Ghost.player_03 = true;
-				}
-				if (gameObject.tag == "Player_04") {
-					_Ghost.player_04 = true;
+				if (readyUpAble == true) {
+					ready = true;
+					_Overlord.playersReady += 1;
+					Invoke ("Readied", 0.25f);
 				}
 			}
-			if (readyUpAble == true) {
-				ready = true;
-				_Overlord.playersReady += 1;
-				Invoke ("Readied", 0.25f);
+			if (rwInput.GetButton ("C_Jump") && ready == true) {
+				if (readyUpAble == false) {
+					ready = false;
+					_Overlord.playersReady -= 1;
+					Invoke ("Readying", 0.25f);
+				}
 			}
-		}
-		if (rwInput.GetButton ("C_Jump") && ready == true) {
-			if (readyUpAble == false) {
-				ready = false;
-				_Overlord.playersReady -= 1;
-				Invoke ("Readying", 0.25f);
+			if (rwInput.GetButton ("Cancel") && readyUpAble == true || rwInput.GetButton ("Cancel") && ready == true) {
+				_Overlord.playersJoined -= 1;
+				if (ready == true) {
+					ready = false;
+					_Overlord.playersReady -= 1;
+				}
+				readyUpAble = false;
+				player.SetActive (false);
+				indicator_01.SetActive (true);
+				indicator_02.SetActive (false);
 			}
 		}
 	}

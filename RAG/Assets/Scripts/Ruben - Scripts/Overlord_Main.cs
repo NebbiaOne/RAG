@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Overlord_Main : MonoBehaviour {
 	public static Overlord_Main _Overlord_main;
 	GameObject overlord;
+	EventSystem eventSystem;
 	bool pauseChecked = true, inGame = false, choice = false;
 	[SerializeField]
 	GameObject menuGame, menuChoice;
@@ -23,12 +25,19 @@ public class Overlord_Main : MonoBehaviour {
 			inGame = true;
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuGame") && inGame != false) {
 			inGame = false;
+			if (SceneManager.GetActiveScene ().name == "Main_Menu") {
+				GameObject.Find ("Canvas_MainMenu").transform.GetChild (1).GetComponent<Button> ().Select ();
+				GameObject.Find ("Canvas_MainMenu").transform.GetChild (1).GetComponent<Button> ().OnSelect (null);
+			}
+		}
+		if (eventSystem == null) {
+			eventSystem = EventSystem.current;
 		}
 	}
 	void Update () {
-		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenuGame" && inGame != true) {
+		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
-		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuGame") && inGame != false) {
+		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
 		if (SceneManager.GetActiveScene ().name == "Arena_01" && playAble != true) {
@@ -42,15 +51,14 @@ public class Overlord_Main : MonoBehaviour {
 		}
 		if (inGame == true && paused == true && choice == false) {
 			if (menuGame.activeSelf != true) {
-				menuGame.SetActive (true);
+				MenuGameActive ();
 			}
 		}
 		if (inGame == true && paused == false) {
 			if (menuGame.activeSelf != false) {
 				menuGame.SetActive (false);
 			}
-			if (menuChoice.activeSelf != false)
-			{
+			if (menuChoice.activeSelf != false) {
 				choice = false;
 				menuChoice.SetActive (false);
 			}
@@ -77,6 +85,10 @@ public class Overlord_Main : MonoBehaviour {
 	}
 	public void MenuGameActive () {
 		choice = false;
+		EventSystem.current.GetComponent<EventSystem> ().firstSelectedGameObject = menuGame.transform.GetChild (1).gameObject;
+		EventSystem.current.GetComponent<EventSystem> ().SetSelectedGameObject (menuGame.transform.GetChild (1).gameObject);
+		menuGame.transform.GetChild (1).gameObject.GetComponent<Button> ().Select ();
+		menuGame.transform.GetChild (1).gameObject.GetComponent<Button> ().OnSelect (null);
 		if (menuGame.activeSelf == false) {
 			menuGame.SetActive (true);
 		}
@@ -86,6 +98,10 @@ public class Overlord_Main : MonoBehaviour {
 	}
 	public void MenuChoiceActive () {
 		choice = true;
+		EventSystem.current.GetComponent<EventSystem> ().firstSelectedGameObject = menuChoice.transform.GetChild (1).gameObject;
+		EventSystem.current.GetComponent<EventSystem> ().SetSelectedGameObject (menuChoice.transform.GetChild (1).gameObject);
+		menuChoice.transform.GetChild (1).gameObject.GetComponent<Button> ().Select ();
+		menuChoice.transform.GetChild (1).gameObject.GetComponent<Button> ().OnSelect (null);
 		if (menuGame.activeSelf == true) {
 			menuGame.SetActive (false);
 		}
