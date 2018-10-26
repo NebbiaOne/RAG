@@ -19,6 +19,7 @@ public class Player_Main : MonoBehaviour {
 	public float playerHealth = 100f;
 	public bool isTargeted = false, blocking = false;
 	public bool sensor_01 = false, sensor_02 = false;
+	public ParticleSystem BloodParticle;
 	void Awake () {
 		_Player_Main = this;
 	}
@@ -130,5 +131,7 @@ public class Player_Main : MonoBehaviour {
 	}
 	public void DamagePlayer () {
 		_MainEnemy.playerHealth -= 5f;
+		//BloodParticle.Emit(50);
+		_MainEnemy.BloodParticle.Emit(50);
 	}
 }
