@@ -8,7 +8,7 @@
 		_Speed("Wave Speed", Range(0,1)) = 0.5
 		_Amount("Wave Amount", Range(0,1)) = 0.5
 		_Height("Wave Height", Range(0,1)) = 0.5
-		_Foam("Foamline Thickness", Range(0,3)) = 0.5
+		_Foam("Foamline Thickness", Range(0,20)) = 0.5
 		
 	}
 	SubShader
