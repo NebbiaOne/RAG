@@ -377,15 +377,6 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 3
-    - _id: 19
-      _name: Cancel
-      _type: 1
-      _descriptiveName: Cancel
-      _positiveDescriptiveName: 
-      _negativeDescriptiveName: 
-      _behaviorId: 0
-      _userAssignable: 1
-      _categoryId: 2
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -414,7 +405,7 @@ MonoBehaviour:
       - categoryId: 1
         actionIds: 030000000500000008000000090000000a0000000b000000
       - categoryId: 2
-        actionIds: 040000000c0000000d0000000e00000013000000
+        actionIds: 040000000c0000000d0000000e000000
       - categoryId: 3
         actionIds: 0f000000100000001100000012000000
     inputBehaviors:
@@ -580,7 +571,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: 19
+        _actionId: -1
         _elementType: 1
         _elementIdentifierId: 9
         _axisRange: 0
@@ -998,7 +989,7 @@ MonoBehaviour:
     customControllerMaps: []
     customControllers: []
     playerIdCounter: 7
-    actionIdCounter: 20
+    actionIdCounter: 19
     actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 4
