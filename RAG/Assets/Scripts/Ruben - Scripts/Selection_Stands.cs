@@ -15,6 +15,8 @@ public class Selection_Stands : MonoBehaviour {
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_Ghost = Overlord_Ghost._Overlord_Ghost;
+		ready = false;
+		readyUpAble = false;
 		if (gameObject.tag == "Player_01") {
 			rwInput = ReInput.players.GetPlayer (0);
 		}
