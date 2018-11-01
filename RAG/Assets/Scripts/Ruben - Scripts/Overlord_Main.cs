@@ -18,12 +18,13 @@ public class Overlord_Main : MonoBehaviour {
 	public bool player_01 = false, player_02 = false, player_03 = false, player_04 = false;
 	void Awake () {
 		overlord = this.gameObject;
-		_Overlord_main = this;
+		_Overlord_main = this; 
 	}
 	void Start () {
 		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenuGame" && inGame != true) {
 			inGame = true;
-		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuGame") && inGame != false) {
+		}
+		if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuGame") && inGame != false) {
 			inGame = false;
 			if (SceneManager.GetActiveScene ().name == "Main_Menu") {
 				GameObject.Find ("Canvas_MainMenu").transform.GetChild (1).GetComponent<Button> ().Select ();
@@ -49,9 +50,9 @@ public class Overlord_Main : MonoBehaviour {
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
-		if (SceneManager.GetActiveScene ().name == "Arena_01" && playAble != true) {
+		if (SceneManager.GetActiveScene ().name == "Arena_01" || SceneManager.GetActiveScene().name == "RubensPlayRoom" && playAble != true) {
 			playAble = true;
-		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && playAble != false) {
+		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && SceneManager.GetActiveScene().name != "RubensPlayRoom" &&playAble != false) {
 			playAble = false;
 
 		}

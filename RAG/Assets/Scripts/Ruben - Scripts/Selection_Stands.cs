@@ -15,8 +15,10 @@ public class Selection_Stands : MonoBehaviour {
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_Ghost = Overlord_Ghost._Overlord_Ghost;
-		ready = false;
+		UnReadyAble = false;
 		readyUpAble = false;
+		ready = false;
+		rwInput = null;
 		if (gameObject.tag == "Player_01") {
 			rwInput = ReInput.players.GetPlayer (0);
 		}
@@ -37,6 +39,20 @@ public class Selection_Stands : MonoBehaviour {
 		player.SetActive (false);
 	}
 	void Update () {
+		if (rwInput == null) {
+			if (gameObject.tag == "Player_01") {
+				rwInput = ReInput.players.GetPlayer (0);
+			}
+			if (gameObject.tag == "Player_02") {
+				rwInput = ReInput.players.GetPlayer (1);
+			}
+			if (gameObject.tag == "Player_03") {
+				rwInput = ReInput.players.GetPlayer (2);
+			}
+			if (gameObject.tag == "Player_04") {
+				rwInput = ReInput.players.GetPlayer (3);
+			}
+		}
 		if (_Overlord.paused == false) {
 			if (indicator_Ready.transform.GetComponent<Renderer> ().material.color != col_pink && ready == true) {
 				indicator_Ready.transform.GetComponent<Renderer> ().material.color = col_pink;
@@ -80,6 +96,18 @@ public class Selection_Stands : MonoBehaviour {
 				if (ready == true) {
 					ready = false;
 					_Overlord.playersReady -= 1;
+					if (gameObject.tag == "Player_01") {
+						_Ghost.player_01 = false;
+					}
+					if (gameObject.tag == "Player_02") {
+						_Ghost.player_02 = false;
+					}
+					if (gameObject.tag == "Player_03") {
+						_Ghost.player_03 = false;
+					}
+					if (gameObject.tag == "Player_04") {
+						_Ghost.player_04 = false;
+					}
 				}
 				readyUpAble = false;
 				player.SetActive (false);
