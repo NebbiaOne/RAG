@@ -113,50 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &6928090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6928092}
-  - component: {fileID: 6928091}
-  m_Layer: 0
-  m_Name: Overlord_Ghost
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &6928091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 6928090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 853d3121d16663c4aa274969b08dcafe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_01: 0
-  player_02: 0
-  player_03: 0
-  player_04: 0
---- !u!4 &6928092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 6928090}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27745375
 Prefab:
   m_ObjectHideFlags: 0
@@ -1263,6 +1219,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba4a6046247e174a8690aa44a050d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &998552524
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076157421595624, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f3837f8f7cd47e64aad900b62b5e180e, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1035229073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2283,26 @@ Prefab:
     - target: {fileID: 4732802566514592, guid: 4ece897d6ea888445b2902bed9ac8055, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.35620436
+      objectReference: {fileID: 0}
+    - target: {fileID: 114911456021005382, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114674339487679450, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114158362700944096, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114970385474811992, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ece897d6ea888445b2902bed9ac8055, type: 2}

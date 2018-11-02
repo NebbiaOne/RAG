@@ -6,10 +6,12 @@ public class Player_Main : MonoBehaviour {
 	public static Player_Main _Player_Main;
 	Overlord_Main _Overlord;
 	Overlord_Ghost _Ghost;
+	Coloriser_Main _Color;
 	MultipleTargetCamera _Camera;
 	TextMesh healthText;
 	RaycastHit hit;
 	Rigidbody rbPlayer;
+	Image healthBar, heartBeat;
 	Image life_01, life_02, life_03;
 	[SerializeField]
 	GameObject preciseSensor;
@@ -27,8 +29,11 @@ public class Player_Main : MonoBehaviour {
 		_Overlord = Overlord_Main._Overlord_main;
 		_Ghost = Overlord_Ghost._Overlord_Ghost;
 		_Camera = MultipleTargetCamera._MultipleTargetCamera;
+		_Color = Coloriser_Main._Coloriser_Main;
 		rbPlayer = transform.GetComponent<Rigidbody> ();
 		healthText = gameObject.transform.GetChild (2).gameObject.GetComponent<TextMesh> ();
+		healthBar = hud.transform.GetChild (0).gameObject.GetComponent<Image> ();
+		heartBeat = hud.transform.GetChild (1).gameObject.GetComponent<Image> ();
 		if (gameObject.tag == "Player_01") {
 			if (_Ghost.player_01 == false) {
 				this.gameObject.SetActive (false);
@@ -73,13 +78,17 @@ public class Player_Main : MonoBehaviour {
 				hud = GameObject.Find ("HUD_Player_04");
 			}
 		}
+
 	}
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Keypad9)) {
+			playerHealth -= 5f;
+		}
 		if (_Overlord.playAble == true) {
 			if (life_01 == null || life_02 == null || life_03 == null) {
-				life_01 = hud.transform.GetChild (3).gameObject.GetComponent<Image> ();
-				life_02 = hud.transform.GetChild (4).gameObject.GetComponent<Image> ();
-				life_03 = hud.transform.GetChild (5).gameObject.GetComponent<Image> ();
+				life_01 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
+				life_02 = hud.transform.GetChild (3).gameObject.GetComponent<Image> ();
+				life_03 = hud.transform.GetChild (4).gameObject.GetComponent<Image> ();
 			}
 			switch (playerLives) {
 				case 0:
@@ -110,10 +119,26 @@ public class Player_Main : MonoBehaviour {
 			if (healthText.text != playerHealth.ToString ()) {
 				healthText.text = playerHealth.ToString ();
 			}
-			/*if (playerHealth <= 0f) {
-				playerLives -= 1;
-				playerHealth = 100;
-			}*/
+			if (playerHealth <= 0) {
+				playerHealth = 0f;
+			}
+			if (healthBar.fillAmount != playerHealth / 100) {
+				healthBar.fillAmount = playerHealth / 100;
+				if (playerHealth >= 75 && healthBar.color != _Color.col_Green) {
+					healthBar.color = _Color.col_Green;
+				}
+				if (playerHealth <= 75 && playerHealth >= 25 && healthBar.color != _Color.col_Yellow) {
+					healthBar.color = _Color.col_Yellow;
+				}
+				if (playerHealth <= 25 && healthBar.color != _Color.col_Red) {
+					healthBar.color = _Color.col_Red;
+				}
+				if (playerHealth <= 0 && heartBeat.IsActive () == false) {
+					heartBeat.gameObject.SetActive (true);
+				} else if (playerHealth >= 0 && heartBeat.IsActive () == true) {
+					heartBeat.gameObject.SetActive (false);
+				}
+			}
 			if (playerLives == 0) {
 				gameObject.SetActive (false);
 				hud.SetActive (false);
@@ -132,6 +157,6 @@ public class Player_Main : MonoBehaviour {
 	public void DamagePlayer () {
 		_MainEnemy.playerHealth -= 5f;
 		//BloodParticle.Emit(50);
-		_MainEnemy.BloodParticle.Emit(50);
+		_MainEnemy.BloodParticle.Emit (50);
 	}
 }
