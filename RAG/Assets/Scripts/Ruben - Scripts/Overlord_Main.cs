@@ -35,6 +35,15 @@ public class Overlord_Main : MonoBehaviour {
 		}
 	}
 	void Update () {
+		if (paused == true)
+		{
+			Time.timeScale = 0;
+		}
+		if (paused == false)
+		{
+			pausable = true;
+			Time.timeScale = 1;
+		}
 		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
@@ -82,6 +91,9 @@ public class Overlord_Main : MonoBehaviour {
 	}
 	void PauseChecker () {
 		pauseChecked = true;
+	}
+	public void UnPause () {
+		paused = false;
 	}
 	public void MenuGameActive () {
 		choice = false;

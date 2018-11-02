@@ -31,10 +31,18 @@ public class Player_Menu : MonoBehaviour {
 			_Overlord.pausable = false;
 			if (_Overlord.paused == true) {
 				_Overlord.paused = false;
+				rwInput.controllers.maps.SetMapsEnabled (true, "Default");
+				rwInput.controllers.maps.SetMapsEnabled (false, "UI Navigation");
 			} else {
 				_Overlord.paused = true;
+				rwInput.controllers.maps.SetMapsEnabled (false, "Default");
+				rwInput.controllers.maps.SetMapsEnabled (true, "UI Navigation");
 			}
 			StartCoroutine (PauseWaiter ());
+		}
+		if (_Overlord.paused == false) {	//This is some terrible coding bro...
+			rwInput.controllers.maps.SetMapsEnabled (true, "Default");
+			rwInput.controllers.maps.SetMapsEnabled (false, "UI Navigation");
 		}
 	}
 	IEnumerator PauseWaiter () {
