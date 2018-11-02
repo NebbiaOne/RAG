@@ -479,14 +479,14 @@ ModelImporter:
     400472: VIS-upper_arm_pole.ik.R
     2100000: Material
     4300000: Retopo
-    7400000: rig|Block_fin
-    7400002: rig|idle_fin
-    7400004: rig|IdlePose_fin
-    7400006: rig|PoseLib_fin
-    7400008: rig|Run_fin
-    7400010: rig|Walk_fin
-    7400012: rig|WeightTest_fin
-    7400014: rig|Block loop_fin
+    7400000: rig|Block
+    7400002: rig|idle
+    7400004: rig|IdlePose
+    7400006: rig|PoseLib
+    7400008: rig|Run
+    7400010: rig|Walk
+    7400012: rig|WeightTest
+    7400014: rig|Block loop
     9500000: //RootNode
     13700000: Retopo
   externalObjects: {}
@@ -518,7 +518,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig|Block_fin
+      name: rig|Block
       takeName: rig|Block
       firstFrame: 0
       lastFrame: 49
@@ -546,7 +546,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|idle_fin
+      name: rig|idle
       takeName: rig|idle
       firstFrame: 0
       lastFrame: 29
@@ -574,7 +574,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|IdlePose_fin
+      name: rig|IdlePose
       takeName: rig|IdlePose
       firstFrame: 0
       lastFrame: 1
@@ -602,7 +602,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|PoseLib_fin
+      name: rig|PoseLib
       takeName: rig|PoseLib
       firstFrame: 0
       lastFrame: 1
@@ -630,7 +630,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|Run_fin
+      name: rig|Run
       takeName: rig|Run
       firstFrame: 0
       lastFrame: 48
@@ -658,7 +658,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|Walk_fin
+      name: rig|Walk
       takeName: rig|Walk
       firstFrame: 0
       lastFrame: 1
@@ -686,7 +686,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|WeightTest_fin
+      name: rig|WeightTest
       takeName: rig|WeightTest
       firstFrame: 0
       lastFrame: 14
@@ -714,7 +714,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: rig|Block loop_fin
+      name: rig|Block loop
       takeName: rig|Block
       firstFrame: 10
       lastFrame: 40

@@ -12,18 +12,19 @@ public class Player_Menu : MonoBehaviour {
 	}
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
-			if (gameObject.tag == "Player_01") {
-				rwInput = ReInput.players.GetPlayer (0);
-			}
-			if (gameObject.tag == "Player_02") {
-				rwInput = ReInput.players.GetPlayer (1);
-			}
-			if (gameObject.tag == "Player_03") {
-				rwInput = ReInput.players.GetPlayer (2);
-			}
-			if (gameObject.tag == "Player_04") {
-				rwInput = ReInput.players.GetPlayer (3);
-			}
+
+		if (gameObject.tag == "Player_01") {
+			rwInput = ReInput.players.GetPlayer (0);
+		}
+		if (gameObject.tag == "Player_02") {
+			rwInput = ReInput.players.GetPlayer (1);
+		}
+		if (gameObject.tag == "Player_03") {
+			rwInput = ReInput.players.GetPlayer (2);
+		}
+		if (gameObject.tag == "Player_04") {
+			rwInput = ReInput.players.GetPlayer (3);
+		}
 	}
 	void Update () {
 		if (rwInput.GetButton ("Pause") && _Overlord.pausable == true) {
@@ -39,7 +40,7 @@ public class Player_Menu : MonoBehaviour {
 			}
 			StartCoroutine (PauseWaiter ());
 		}
-		if (_Overlord.paused == false) { //This is some terrible coding bro...
+		if (_Overlord.paused == false) {	//This is some terrible coding bro...
 			rwInput.controllers.maps.SetMapsEnabled (true, "Default");
 			rwInput.controllers.maps.SetMapsEnabled (false, "UI Navigation");
 		}

@@ -16,9 +16,9 @@ public class Player_Movement : MonoBehaviour {
 	[SerializeField]
 	GameObject hud;
 	[SerializeField]
-	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.75f, dashRechargeWaiter = 1f;
+	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
 	[SerializeField]
-	int dashCharges = 1;
+	int dashCharges = 3;
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_PlayerMain = Player_Main._Player_Main;
@@ -39,7 +39,7 @@ public class Player_Movement : MonoBehaviour {
 	}
 	void Update () {
 		if (_Overlord.playAble == true) {
-			/*if (charge_01 == null || charge_02 == null || charge_03 == null) {
+			if (charge_01 == null || charge_02 == null || charge_03 == null) {
 				charge_01 = hud.transform.GetChild (0).gameObject.GetComponent<Image> ();
 				charge_02 = hud.transform.GetChild (1).gameObject.GetComponent<Image> ();
 				charge_03 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
@@ -65,8 +65,8 @@ public class Player_Movement : MonoBehaviour {
 					charge_02.enabled = true;
 					charge_03.enabled = true;
 					break;
-			}*/
-			if (dashCharges != 1 && dashRecharging == false) {
+			}
+			if (dashCharges != 3 && dashRecharging == false) {
 				dashRecharging = true;
 				StartCoroutine (DashRecharge ());
 			}

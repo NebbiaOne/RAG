@@ -17,10 +17,6 @@ public class Overlord_Ghost : MonoBehaviour {
 		DontDestroyOnLoad (this.gameObject);
 	}
 	void Update () {
-		if (SceneManager.GetActiveScene().name == "MainMenu")
-		{
-			Destroy(this.gameObject);
-		}
 		if (_Loader.nextScene == "Arena_01" && levelChecked == false) {
 			levelChecked = true;
 		}
