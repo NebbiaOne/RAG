@@ -167,7 +167,10 @@ MonoBehaviour:
       _name: System
       _descriptiveName: System
       _startPlaying: 1
-      _defaultJoystickMaps: []
+      _defaultJoystickMaps:
+      - _enabled: 1
+        _categoryId: 3
+        _layoutId: 0
       _defaultMouseMaps: []
       _defaultKeyboardMaps: []
       _defaultCustomControllerMaps: []
@@ -182,6 +185,9 @@ MonoBehaviour:
       _defaultJoystickMaps:
       - _enabled: 1
         _categoryId: 0
+        _layoutId: 0
+      - _enabled: 0
+        _categoryId: 3
         _layoutId: 0
       _defaultMouseMaps: []
       _defaultKeyboardMaps: []
@@ -198,6 +204,9 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 0
         _layoutId: 0
+      - _enabled: 0
+        _categoryId: 3
+        _layoutId: 0
       _defaultMouseMaps: []
       _defaultKeyboardMaps: []
       _defaultCustomControllerMaps: []
@@ -213,6 +222,9 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 0
         _layoutId: 0
+      - _enabled: 0
+        _categoryId: 3
+        _layoutId: 0
       _defaultMouseMaps: []
       _defaultKeyboardMaps: []
       _defaultCustomControllerMaps: []
@@ -227,6 +239,9 @@ MonoBehaviour:
       _defaultJoystickMaps:
       - _enabled: 1
         _categoryId: 0
+        _layoutId: 0
+      - _enabled: 0
+        _categoryId: 3
         _layoutId: 0
       _defaultMouseMaps: []
       _defaultKeyboardMaps: []
@@ -326,6 +341,51 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 2
+    - _id: 15
+      _name: UIHorizontal
+      _type: 0
+      _descriptiveName: 
+      _positiveDescriptiveName: Right
+      _negativeDescriptiveName: Left
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 3
+    - _id: 16
+      _name: UIVertical
+      _type: 0
+      _descriptiveName: 
+      _positiveDescriptiveName: Up
+      _negativeDescriptiveName: Down
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 3
+    - _id: 17
+      _name: UISubmit
+      _type: 1
+      _descriptiveName: 
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 3
+    - _id: 18
+      _name: UICancel
+      _type: 1
+      _descriptiveName: 
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 3
+    - _id: 19
+      _name: Cancel
+      _type: 1
+      _descriptiveName: Cancel
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 2
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -342,6 +402,11 @@ MonoBehaviour:
       _tag: 
       _id: 2
       _userAssignable: 1
+    - _name: UI
+      _descriptiveName: UI
+      _tag: 
+      _id: 3
+      _userAssignable: 1
     actionCategoryMap:
       list:
       - categoryId: 0
@@ -349,7 +414,9 @@ MonoBehaviour:
       - categoryId: 1
         actionIds: 030000000500000008000000090000000a0000000b000000
       - categoryId: 2
-        actionIds: 040000000c0000000d0000000e000000
+        actionIds: 040000000c0000000d0000000e00000013000000
+      - categoryId: 3
+        actionIds: 0f000000100000001100000012000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -379,6 +446,13 @@ MonoBehaviour:
       _descriptiveName: Default
       _tag: 
       _id: 0
+      _userAssignable: 1
+      _checkConflictsWithAllCategories: 1
+      _checkConflictsCategoryIds: 
+    - _name: UI Navigation
+      _descriptiveName: UI Nav
+      _tag: 
+      _id: 3
       _userAssignable: 1
       _checkConflictsWithAllCategories: 1
       _checkConflictsCategoryIds: 
@@ -506,7 +580,7 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
-        _actionId: -1
+        _actionId: 19
         _elementType: 1
         _elementIdentifierId: 9
         _axisRange: 0
@@ -659,20 +733,280 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+    - id: 2
+      categoryId: 3
+      layoutId: 0
+      name: 
+      hardwareGuidString: 83b427e4-086f-47f3-bb06-be266abd1ca5
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 15
+        _elementType: 0
+        _elementIdentifierId: 0
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 16
+        _elementType: 0
+        _elementIdentifierId: 1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 2
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 3
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 4
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 5
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 6
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 17
+        _elementType: 1
+        _elementIdentifierId: 7
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 18
+        _elementType: 1
+        _elementIdentifierId: 8
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 9
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 10
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 11
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 12
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 0
+        _elementIdentifierId: 13
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 14
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 15
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 16
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 17
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 18
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 19
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 20
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 21
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: -1
+        _elementType: 1
+        _elementIdentifierId: 22
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     keyboardMaps: []
     mouseMaps: []
     customControllerMaps: []
     customControllers: []
-    playerIdCounter: 6
-    actionIdCounter: 15
-    actionCategoryIdCounter: 3
+    playerIdCounter: 7
+    actionIdCounter: 20
+    actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
-    mapCategoryIdCounter: 3
+    mapCategoryIdCounter: 4
     joystickLayoutIdCounter: 1
     keyboardLayoutIdCounter: 1
     mouseLayoutIdCounter: 1
     customControllerLayoutIdCounter: 1
-    joystickMapIdCounter: 2
+    joystickMapIdCounter: 3
     keyboardMapIdCounter: 0
     mouseMapIdCounter: 0
     customControllerMapIdCounter: 0
