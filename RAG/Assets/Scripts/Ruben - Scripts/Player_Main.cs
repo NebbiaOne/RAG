@@ -35,6 +35,8 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			} else {
+				_Overlord.player01Alive = true;
 			}
 			if (hud == null) {
 				hud = GameObject.Find ("HUD_Player_01");
@@ -46,6 +48,8 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			} else {
+				_Overlord.player02Alive = true;
 			}
 			if (hud == null) {
 				hud = GameObject.Find ("HUD_Player_02");
@@ -57,6 +61,8 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			} else {
+				_Overlord.player03Alive = true;
 			}
 			if (hud == null) {
 				hud = GameObject.Find ("HUD_Player_03");
@@ -68,6 +74,8 @@ public class Player_Main : MonoBehaviour {
 				if (hud != null) {
 					hud.SetActive (false);
 				}
+			} else {
+				_Overlord.player04Alive = true;
 			}
 			if (hud == null) {
 				hud = GameObject.Find ("HUD_Player_04");
@@ -75,6 +83,13 @@ public class Player_Main : MonoBehaviour {
 		}
 	}
 	void Update () {
+		//REMOVE
+		if (Input.GetKeyDown(KeyCode.Keypad8))
+		{
+			playerHealth -= 5;
+		}
+		//REMOVE
+
 		if (_Overlord.playAble == true) {
 			if (life_01 == null || life_02 == null || life_03 == null) {
 				life_01 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
@@ -110,10 +125,6 @@ public class Player_Main : MonoBehaviour {
 			if (healthText.text != playerHealth.ToString ()) {
 				healthText.text = playerHealth.ToString ();
 			}
-			/*if (playerHealth <= 0f) {
-				playerLives -= 1;
-				playerHealth = 100;
-			}*/
 			if (playerLives == 0) {
 				gameObject.SetActive (false);
 				hud.SetActive (false);
@@ -126,12 +137,19 @@ public class Player_Main : MonoBehaviour {
 			rbPlayer.isKinematic = true;
 		}
 	}
+	void OnTriggerEnter (Collider other) {
+		if (other.gameObject.tag == "Pickup_Health" && playerHealth < 100)
+		{
+			playerHealth = 100;
+			Destroy(other.gameObject);
+		}
+	}
 	public void Retarget () {
 		_MainEnemy = target.transform.GetComponent<Player_Main> ();
 	}
 	public void DamagePlayer () {
 		_MainEnemy.playerHealth -= 5f;
 		//BloodParticle.Emit(50);
-		_MainEnemy.BloodParticle.Emit(50);
+		_MainEnemy.BloodParticle.Emit (50);
 	}
 }

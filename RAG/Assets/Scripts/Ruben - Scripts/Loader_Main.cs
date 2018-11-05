@@ -39,6 +39,10 @@ public class Loader_Main : MonoBehaviour {
 		}
 	}
 	public void Initiate_Load () {
+		if (nextScene != "Arena_01")
+		{
+			_Overlord.inArena = false;
+		}
 		DontDestroyOnLoad (this.gameObject);
 		SceneManager.LoadScene ("Loading");
 	}

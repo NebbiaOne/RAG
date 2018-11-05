@@ -5,22 +5,37 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Overlord_Main : MonoBehaviour {
+	// Remove the play room checkers
 	public static Overlord_Main _Overlord_main;
+	Coloriser_Main _Color;
 	GameObject overlord;
 	EventSystem eventSystem;
-	bool pauseChecked = true, inGame = false, choice = false;
+	Text textPlayerVic;
+	[SerializeField] //REMOVE
+	bool pauseChecked = true, inGame = false, choice = false, victory = false;
 	[SerializeField]
-	GameObject menuGame, menuChoice;
+	GameObject menuGame, menuChoice, menuVictory;
 	[HideInInspector]
-	public int playersJoined = 0, playersReady = 0;
+	public int playersJoined = 0, playersReady = 0, playersAlive = 0;
 	public int playerID = 0;
 	public bool playAble = false, pausable = true, paused = false;
 	public bool player_01 = false, player_02 = false, player_03 = false, player_04 = false;
+	public bool inArena = false;
+	[SerializeField] //REMOVE
+	public bool player01Alive, player02Alive, player03Alive, player04Alive;
 	void Awake () {
 		overlord = this.gameObject;
 		_Overlord_main = this;
 	}
 	void Start () {
+		_Color = Coloriser_Main._Coloriser_Main;
+		playersAlive = playersJoined;
+		if (SceneManager.GetActiveScene ().name == "Arena_01" || SceneManager.GetActiveScene().name == "RubensPlayRoom") {
+			inArena = true;
+			textPlayerVic = menuVictory.transform.GetChild (0).GetChild (0).gameObject.GetComponent<Text> ();
+		} else {
+			inArena = false;
+		}
 		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenuGame" && inGame != true) {
 			inGame = true;
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenuGame") && inGame != false) {
@@ -35,14 +50,40 @@ public class Overlord_Main : MonoBehaviour {
 		}
 	}
 	void Update () {
+		// REMOVE
+		if (Input.GetKeyDown (KeyCode.Keypad9)) {
+			playersAlive = 1;
+			Victory ();
+		}
+		// REMOVE
+
+		if (playersAlive == 1) {
+			MenuVictoryActive ();
+			if (player01Alive == true) {
+				textPlayerVic.text = "- " + "Player 1" + " -";
+				textPlayerVic.color = _Color.col_Player01;
+			}
+			if (player02Alive == true) {
+				textPlayerVic.text = "- " + "Player 2" + " -";
+				textPlayerVic.color = _Color.col_Player02;
+			}
+			if (player03Alive == true) {
+				textPlayerVic.text = "- " + "Player 3" + " -";
+				textPlayerVic.color = _Color.col_Player03;
+			}
+			if (player04Alive == true) {
+				textPlayerVic.text = "- " + "Player 4" + " -";
+				textPlayerVic.color = _Color.col_Player04;
+			}
+		}
 		if (SceneManager.GetActiveScene ().name != "Loading" && SceneManager.GetActiveScene ().name != "MainMenu" && inGame != true) {
 			inGame = true;
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
-		if (SceneManager.GetActiveScene ().name == "Arena_01" || SceneManager.GetActiveScene().name == "RubensPlayRoom" && playAble != true) {
+		if (SceneManager.GetActiveScene ().name == "Arena_01" || SceneManager.GetActiveScene ().name == "RubensPlayRoom" && playAble != true) {
 			playAble = true;
-		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && SceneManager.GetActiveScene().name != "RubensPlayRoom" && playAble != false) {
+		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && SceneManager.GetActiveScene ().name != "RubensPlayRoom" && playAble != false) {
 			playAble = false;
 
 		}
@@ -54,7 +95,7 @@ public class Overlord_Main : MonoBehaviour {
 				MenuGameActive ();
 			}
 		}
-		if (inGame == true && paused == false) {
+		if (inGame == true && paused == false && victory == false) {
 			if (menuGame.activeSelf != false) {
 				menuGame.SetActive (false);
 			}
@@ -80,8 +121,24 @@ public class Overlord_Main : MonoBehaviour {
 			}
 		}
 	}
+	void Victory () {
+		MenuVictoryActive ();
+	}
 	void PauseChecker () {
 		pauseChecked = true;
+	}
+	public void MenuVictoryActive () {
+		if (inArena == true) {
+			choice = false;
+			victory = true;
+			EventSystem.current.GetComponent<EventSystem> ().firstSelectedGameObject = menuVictory.transform.GetChild (0).GetChild (2).GetChild (0).gameObject;
+			EventSystem.current.GetComponent<EventSystem> ().SetSelectedGameObject (menuVictory.transform.GetChild (0).GetChild (2).GetChild (0).gameObject);
+			menuVictory.transform.GetChild (0).GetChild (2).GetChild (0).GetComponent<Button> ().Select ();
+			menuVictory.transform.GetChild (0).GetChild (2).GetChild (0).GetComponent<Button> ().OnSelect (null);
+			if (menuVictory.activeSelf == false) {
+				menuVictory.SetActive (true);
+			}
+		}
 	}
 	public void MenuGameActive () {
 		choice = false;
@@ -107,6 +164,12 @@ public class Overlord_Main : MonoBehaviour {
 		}
 		if (menuChoice.activeSelf == false) {
 			menuChoice.SetActive (true);
+		}
+	}
+	public void MenuChoiceInactive () {
+		menuChoice.SetActive (false);
+		if (victory == true) {
+			MenuVictoryActive ();
 		}
 	}
 }
