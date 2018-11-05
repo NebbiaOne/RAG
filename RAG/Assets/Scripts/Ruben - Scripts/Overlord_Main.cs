@@ -40,9 +40,9 @@ public class Overlord_Main : MonoBehaviour {
 		} else if ((SceneManager.GetActiveScene ().name == "Loading" || SceneManager.GetActiveScene ().name == "MainMenu") && inGame != false) {
 			inGame = false;
 		}
-		if (SceneManager.GetActiveScene ().name == "Arena_01" && playAble != true) {
+		if (SceneManager.GetActiveScene ().name == "Arena_01" || SceneManager.GetActiveScene().name == "RubensPlayRoom" && playAble != true) {
 			playAble = true;
-		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && playAble != false) {
+		} else if (SceneManager.GetActiveScene ().name != "Arena_01" && SceneManager.GetActiveScene().name != "RubensPlayRoom" && playAble != false) {
 			playAble = false;
 
 		}

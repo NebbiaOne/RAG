@@ -77,9 +77,9 @@ public class Player_Main : MonoBehaviour {
 	void Update () {
 		if (_Overlord.playAble == true) {
 			if (life_01 == null || life_02 == null || life_03 == null) {
-				life_01 = hud.transform.GetChild (3).gameObject.GetComponent<Image> ();
-				life_02 = hud.transform.GetChild (4).gameObject.GetComponent<Image> ();
-				life_03 = hud.transform.GetChild (5).gameObject.GetComponent<Image> ();
+				life_01 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
+				life_02 = hud.transform.GetChild (3).gameObject.GetComponent<Image> ();
+				life_03 = hud.transform.GetChild (4).gameObject.GetComponent<Image> ();
 			}
 			switch (playerLives) {
 				case 0:

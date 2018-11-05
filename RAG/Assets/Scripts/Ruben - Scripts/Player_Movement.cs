@@ -8,7 +8,6 @@ public class Player_Movement : MonoBehaviour {
 	Player_Main _PlayerMain;
 	Player rwInput;
 	Rigidbody rbPlayer;
-	Image charge_01, charge_02, charge_03;
 	Quaternion inputRotation, movementDirection;
 	bool dashWaited = false, dashRecharging = false, dashAble = true;
 	bool p_01 = false, p_02 = false, p_03 = false, p_04 = false;
@@ -16,13 +15,15 @@ public class Player_Movement : MonoBehaviour {
 	[SerializeField]
 	GameObject hud;
 	[SerializeField]
-	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.25f, dashRechargeWaiter = 1f;
+	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.65f, dashRechargeWaiter = 1f;
 	[SerializeField]
-	int dashCharges = 3;
+	int dashCharges = 1;
+	int dashRechargeAmount;
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_PlayerMain = Player_Main._Player_Main;
 		hud = _PlayerMain.hud;
+		dashRechargeAmount = dashCharges;
 		if (gameObject.tag == "Player_01") {
 			rwInput = ReInput.players.GetPlayer (0);
 		}
@@ -39,34 +40,7 @@ public class Player_Movement : MonoBehaviour {
 	}
 	void Update () {
 		if (_Overlord.playAble == true) {
-			if (charge_01 == null || charge_02 == null || charge_03 == null) {
-				charge_01 = hud.transform.GetChild (0).gameObject.GetComponent<Image> ();
-				charge_02 = hud.transform.GetChild (1).gameObject.GetComponent<Image> ();
-				charge_03 = hud.transform.GetChild (2).gameObject.GetComponent<Image> ();
-			}
-			switch (dashCharges) {
-				case 0:
-					charge_01.enabled = false;
-					charge_02.enabled = false;
-					charge_03.enabled = false;
-					break;
-				case 1:
-					charge_01.enabled = true;
-					charge_02.enabled = false;
-					charge_03.enabled = false;
-					break;
-				case 2:
-					charge_01.enabled = true;
-					charge_02.enabled = true;
-					charge_03.enabled = false;
-					break;
-				case 3:
-					charge_01.enabled = true;
-					charge_02.enabled = true;
-					charge_03.enabled = true;
-					break;
-			}
-			if (dashCharges != 3 && dashRecharging == false) {
+			if (dashCharges != dashRechargeAmount && dashRecharging == false) {
 				dashRecharging = true;
 				StartCoroutine (DashRecharge ());
 			}
