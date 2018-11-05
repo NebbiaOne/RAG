@@ -1307,6 +1307,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1379277283887372, guid: f8e99c5b89882c349a5e1d165c9fcf5b,
     type: 2}
   m_PrefabInternal: {fileID: 1991121489}
+--- !u!136 &162239644
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 162239643}
+  m_Material: {fileID: 13400000, guid: 2392dd328e2b40a4bbd5c2e377623d16, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017618615
+  m_Height: 0.06794586
+  m_Direction: 1
+  m_Center: {x: 1.5975652e-16, y: 0.016354326, z: 0.00029809593}
 --- !u!114 &162239653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,6 +1653,11 @@ Prefab:
       propertyPath: BloodParticle
       value: 
       objectReference: {fileID: 1513443139}
+    - target: {fileID: 64447381433431180, guid: 8ee4bef98b43241459e52dee3b589b59,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee4bef98b43241459e52dee3b589b59, type: 2}
   m_IsPrefabAsset: 0
@@ -3007,6 +3025,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 844c1aec139cbf34684dcbdff51d041c,
     type: 3}
   m_PrefabInternal: {fileID: 1697351499}
+--- !u!64 &354141561
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354141558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 0}
 --- !u!1001 &370359652
 Prefab:
   m_ObjectHideFlags: 0
@@ -8929,6 +8961,11 @@ Prefab:
       propertyPath: BloodParticle
       value: 
       objectReference: {fileID: 259244247}
+    - target: {fileID: 64536811541545528, guid: a81139e449f3d6a4fa24afc75272adeb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81139e449f3d6a4fa24afc75272adeb, type: 2}
   m_IsPrefabAsset: 0
@@ -9156,6 +9193,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1430573637368094, guid: a81139e449f3d6a4fa24afc75272adeb,
     type: 2}
   m_PrefabInternal: {fileID: 518299726}
+--- !u!136 &532204564
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532204563}
+  m_Material: {fileID: 13400000, guid: 2392dd328e2b40a4bbd5c2e377623d16, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017618615
+  m_Height: 0.06794586
+  m_Direction: 1
+  m_Center: {x: 1.5975652e-16, y: 0.016354326, z: 0.00029809593}
 --- !u!114 &532204573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11267,6 +11317,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1618761449294454, guid: 8ee4bef98b43241459e52dee3b589b59,
     type: 2}
   m_PrefabInternal: {fileID: 182927178}
+--- !u!136 &777460954
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777460953}
+  m_Material: {fileID: 13400000, guid: 2392dd328e2b40a4bbd5c2e377623d16, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017618615
+  m_Height: 0.06794586
+  m_Direction: 1
+  m_Center: {x: 1.5975652e-16, y: 0.016354326, z: 0.00029809593}
 --- !u!114 &777460963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22516,6 +22579,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1504875760285604, guid: 4ece897d6ea888445b2902bed9ac8055,
     type: 2}
   m_PrefabInternal: {fileID: 2072888654}
+--- !u!136 &1574534953
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574534952}
+  m_Material: {fileID: 13400000, guid: 2392dd328e2b40a4bbd5c2e377623d16, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.017618615
+  m_Height: 0.06794586
+  m_Direction: 1
+  m_Center: {x: 1.5975652e-16, y: 0.016354326, z: 0.00029809593}
 --- !u!114 &1574534962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25764,6 +25840,11 @@ Prefab:
       propertyPath: BloodParticle
       value: 
       objectReference: {fileID: 1548453811}
+    - target: {fileID: 64517057443042628, guid: f8e99c5b89882c349a5e1d165c9fcf5b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e99c5b89882c349a5e1d165c9fcf5b, type: 2}
   m_IsPrefabAsset: 0
@@ -31038,6 +31119,11 @@ Prefab:
       propertyPath: BloodParticle
       value: 
       objectReference: {fileID: 2110610468}
+    - target: {fileID: 64832784325458730, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ece897d6ea888445b2902bed9ac8055, type: 2}
   m_IsPrefabAsset: 0
