@@ -23526,11 +23526,15 @@ Prefab:
     - target: {fileID: 9500000, guid: 844c1aec139cbf34684dcbdff51d041c, type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: 3de55fb17543b9344a9518d8f3a886db, type: 3}
+      objectReference: {fileID: 9000000, guid: bd089078e9142b84fb29abb856249911, type: 3}
     - target: {fileID: 9500000, guid: 844c1aec139cbf34684dcbdff51d041c, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 16ea4b0ca2ab1fd4fab29f890879fed9, type: 2}
+    - target: {fileID: 9500000, guid: 844c1aec139cbf34684dcbdff51d041c, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 844c1aec139cbf34684dcbdff51d041c, type: 3}
   m_IsPrefabAsset: 0
@@ -31137,6 +31141,11 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114158362700944096, guid: 4ece897d6ea888445b2902bed9ac8055,
+        type: 2}
+      propertyPath: AnimatorObject
+      value: 
+      objectReference: {fileID: 354141558}
+    - target: {fileID: 114911456021005382, guid: 4ece897d6ea888445b2902bed9ac8055,
         type: 2}
       propertyPath: AnimatorObject
       value: 
