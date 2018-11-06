@@ -17,20 +17,8 @@ public class Player_Movement : MonoBehaviour {
 	[SerializeField]
 	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.65f, dashRechargeWaiter = 1f;
 	[SerializeField]
-<<<<<<< HEAD
 	int dashCharges = 1;
 	int dashRechargeAmount;
-=======
-<<<<<<< HEAD
-	int dashCharges = 1;
-	int dashRechargeAmount;
-=======
-	int dashCharges = 3;
-
-	[SerializeField] GameObject AnimatorObject;
-	Animator PlayerAnimator;
->>>>>>> Christiaan
->>>>>>> master
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_PlayerMain = Player_Main._Player_Main;
