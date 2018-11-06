@@ -709,6 +709,26 @@ Prefab:
       propertyPath: m_Name
       value: Pickup_Health
       objectReference: {fileID: 0}
+    - target: {fileID: 198821503802105098, guid: 02820b99448d55640b938b2109bc7c30,
+        type: 2}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198821503802105098, guid: 02820b99448d55640b938b2109bc7c30,
+        type: 2}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198821503802105098, guid: 02820b99448d55640b938b2109bc7c30,
+        type: 2}
+      propertyPath: InitialModule.randomizeRotationDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198821503802105098, guid: 02820b99448d55640b938b2109bc7c30,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02820b99448d55640b938b2109bc7c30, type: 2}
   m_IsPrefabAsset: 0
