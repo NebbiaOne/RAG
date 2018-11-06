@@ -17,8 +17,15 @@ public class Player_Movement : MonoBehaviour {
 	[SerializeField]
 	float movementSpeed = 200, jumpForce = 150, rotationSpeed = 50, maxSpeed = 5f, dashStrength = 125f, dashUseWaiter = 0.65f, dashRechargeWaiter = 1f;
 	[SerializeField]
+<<<<<<< HEAD
 	int dashCharges = 1;
 	int dashRechargeAmount;
+=======
+	int dashCharges = 3;
+
+	[SerializeField] GameObject AnimatorObject;
+	Animator PlayerAnimator;
+>>>>>>> origin/Christiaan
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_PlayerMain = Player_Main._Player_Main;
@@ -37,6 +44,7 @@ public class Player_Movement : MonoBehaviour {
 			rwInput = ReInput.players.GetPlayer (3);
 		}
 		rbPlayer = gameObject.transform.GetComponent<Rigidbody> ();
+		PlayerAnimator = AnimatorObject.GetComponent<Animator>();
 	}
 	void Update () {
 		if (_Overlord.playAble == true) {
@@ -75,6 +83,10 @@ public class Player_Movement : MonoBehaviour {
 			if (rwInput.GetAxis ("CM_Vertical") != 0 || rwInput.GetAxis ("CM_Horizontal") != 0) {
 				horizontalMovmement = rwInput.GetAxis ("CM_Horizontal");
 				verticalMovement = rwInput.GetAxis ("CM_Vertical");
+
+				PlayerAnimator.SetFloat("PlayerMoveX",horizontalMovmement);
+				PlayerAnimator.SetFloat("PlayerMoveY",verticalMovement);
+
 				if (rwInput.GetAxis ("CL_Horizontal") == 0 && rwInput.GetAxis ("CL_Vertical") == 0) {
 					inputRotation = Quaternion.Euler (new Vector3 (0f, Mathf.Atan2 (rwInput.GetAxis ("CM_Horizontal"), rwInput.GetAxis ("CM_Vertical")) * 180 / Mathf.PI));
 					transform.rotation = Quaternion.RotateTowards (transform.rotation, inputRotation, rotationSpeed);

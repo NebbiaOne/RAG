@@ -13,6 +13,10 @@ public class Player_Combat : MonoBehaviour {
 	[SerializeField]
 	float attackSpeed = 0.5f, blockTime = 2f, blockCooldown = 1f, knockback = 5f;
 	public float playerHealth = 100;
+
+	Animator PlayerAnimator;
+	[SerializeField] GameObject AnimatorObject;
+
 	void Start () {
 		_Overlord = Overlord_Main._Overlord_main;
 		_Main = transform.GetComponent<Player_Main> ();
@@ -29,6 +33,8 @@ public class Player_Combat : MonoBehaviour {
 		if (gameObject.tag == "Player_04") {
 			rwInput = ReInput.players.GetPlayer (3);
 		}
+
+		PlayerAnimator = AnimatorObject.GetComponent<Animator>();
 	}
 	void Update () {
 		if (_Overlord.playAble == true) {
@@ -42,6 +48,9 @@ public class Player_Combat : MonoBehaviour {
 				}
 			}
 			if (rwInput.GetAxis ("Attack") > 0f && attackAble == true && _Main.blocking == false) {
+                //PlayerAnimator.SetLayerWeight(1,1);
+                //PlayerAnimator.SetTrigger("AttackTrigger");
+                StartCoroutine(AttackAnimate());
 				if (_Main.target != null) {
 					hitDirection = transform.position + (this.transform.position - _Main.target.transform.position) * -25f;
 					//Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
@@ -60,6 +69,7 @@ public class Player_Combat : MonoBehaviour {
 					}
 				}
 				attackAble = false;
+                
 				gameObject.transform.GetChild (0).gameObject.SetActive (true);
 				StartCoroutine (AttackWaiter ());
 			} else if (rwInput.GetAxis ("Attack") <= 0f || attackAble == false) {
@@ -72,17 +82,26 @@ public class Player_Combat : MonoBehaviour {
 			if (rwInput.GetAxis ("Block") > 0f && blockAble == true && attacking == false) {
 				if (_Main.blocking != true) {
 					_Main.blocking = true;
+                    PlayerAnimator.SetLayerWeight(1, 1);
+					PlayerAnimator.SetBool("Blocking",true);
 				}
 				gameObject.transform.GetChild (1).gameObject.SetActive (true);
 				StartCoroutine (BlockWaiter ());
 			} else if (rwInput.GetAxis ("Block") <= 0f || blockAble == false) {
 				if (_Main.blocking != false) {
 					_Main.blocking = false;
+                    PlayerAnimator.SetBool("Blocking", false);
+                    PlayerAnimator.SetLayerWeight(1, 0);
 				}
 				gameObject.transform.GetChild (1).gameObject.SetActive (false);
 			}
 		}
-	}
+
+        
+
+        
+         
+        }
 	IEnumerator AttackWaiter () {
 		yield return new WaitForSeconds (attackSpeed);
 		attackWaited = true;
@@ -96,4 +115,14 @@ public class Player_Combat : MonoBehaviour {
 		yield return new WaitForSeconds (blockCooldown);
 		blockAble = true;
 	}
+
+    IEnumerator AttackAnimate()
+    {
+        //Debug.Log("ANIMATINE");
+        PlayerAnimator.SetLayerWeight(1, 1);
+        PlayerAnimator.SetTrigger("AttackTrigger");
+        yield return new WaitForSeconds(0.25f);
+        PlayerAnimator.SetLayerWeight(1, 0);
+       // Debug.Log("ANIMATINE");
+    }
 }
