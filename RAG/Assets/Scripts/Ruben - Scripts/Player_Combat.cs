@@ -48,8 +48,9 @@ public class Player_Combat : MonoBehaviour {
 				}
 			}
 			if (rwInput.GetAxis ("Attack") > 0f && attackAble == true && _Main.blocking == false) {
-				PlayerAnimator.SetLayerWeight(1,1);
-				PlayerAnimator.SetTrigger("AttackTrigger");
+                //PlayerAnimator.SetLayerWeight(1,1);
+                //PlayerAnimator.SetTrigger("AttackTrigger");
+                StartCoroutine(AttackAnimate());
 				if (_Main.target != null) {
 					hitDirection = transform.position + (this.transform.position - _Main.target.transform.position) * -25f;
 					//Debug.DrawRay (transform.position, hitDirection * 1f, Color.green, Mathf.Infinity);
@@ -110,4 +111,14 @@ public class Player_Combat : MonoBehaviour {
 		yield return new WaitForSeconds (blockCooldown);
 		blockAble = true;
 	}
+
+    IEnumerator AttackAnimate()
+    {
+        //Debug.Log("ANIMATINE");
+        PlayerAnimator.SetLayerWeight(1, 1);
+        PlayerAnimator.SetTrigger("AttackTrigger");
+        yield return new WaitForSeconds(0.25f);
+        PlayerAnimator.SetLayerWeight(1, 0);
+       // Debug.Log("ANIMATINE");
+    }
 }
