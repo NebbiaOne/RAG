@@ -82,12 +82,16 @@ public class Player_Combat : MonoBehaviour {
 			if (rwInput.GetAxis ("Block") > 0f && blockAble == true && attacking == false) {
 				if (_Main.blocking != true) {
 					_Main.blocking = true;
+                    PlayerAnimator.SetLayerWeight(1, 1);
+					PlayerAnimator.SetBool("Blocking",true);
 				}
 				gameObject.transform.GetChild (1).gameObject.SetActive (true);
 				StartCoroutine (BlockWaiter ());
 			} else if (rwInput.GetAxis ("Block") <= 0f || blockAble == false) {
 				if (_Main.blocking != false) {
 					_Main.blocking = false;
+                    PlayerAnimator.SetBool("Blocking", false);
+                    PlayerAnimator.SetLayerWeight(1, 0);
 				}
 				gameObject.transform.GetChild (1).gameObject.SetActive (false);
 			}
