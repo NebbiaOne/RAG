@@ -62,8 +62,6 @@ ModelImporter:
     7400004: idle
     7400006: Run
     7400008: WeightTest
-    7400010: Attack
-    7400012: JumpLoop
     9500000: //RootNode
     13700000: Retopo
   externalObjects: {}
