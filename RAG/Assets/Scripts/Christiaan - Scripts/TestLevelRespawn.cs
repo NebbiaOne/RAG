@@ -13,6 +13,7 @@ public class TestLevelRespawn : MonoBehaviour {
 			CurrentPlayer = collision.gameObject;
 			_PlayerMain = CurrentPlayer.GetComponent<Player_Main>();
 			_PlayerMain.playerLives -= 1;
+			_PlayerMain.playerHealth = 100;
 			//CurrentPlayer.transform.position = WaterCollider.transform.position;
 			CurrentPlayer.transform.position = new Vector3(0.0f, 20.0f,0.0f);
 		}	 
