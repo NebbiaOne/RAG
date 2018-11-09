@@ -8813,10 +8813,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198343249367538906, guid: a122c0710317d1e47b4f846edbef24be,
-        type: 2}
-      propertyPath: TrailModule.widthOverTrail.scalar
-      value: 0.6
+    - target: {fileID: 4921025127546084, guid: a122c0710317d1e47b4f846edbef24be, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734041301345622, guid: a122c0710317d1e47b4f846edbef24be, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.330001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a122c0710317d1e47b4f846edbef24be, type: 2}
@@ -14039,6 +14042,7 @@ GameObject:
   - component: {fileID: 1123050901}
   - component: {fileID: 1123050902}
   - component: {fileID: 1123050903}
+  - component: {fileID: 1123050904}
   m_Layer: 0
   m_Name: WaterDeathCollider
   m_TagString: Untagged
@@ -14085,6 +14089,19 @@ MonoBehaviour:
   CurrentPlayer: {fileID: 0}
   SpawnPoint: {fileID: 1402874936}
   WaterCollider: {fileID: 1123050900}
+  SkullParticle: {fileID: 1597311906480034, guid: a122c0710317d1e47b4f846edbef24be,
+    type: 2}
+--- !u!114 &1123050904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1123050900}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b33aab23fd8d114f9f3c6954d31b8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123662409
 GameObject:
   m_ObjectHideFlags: 0
