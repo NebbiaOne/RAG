@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4233119563309270}
   - component: {fileID: 114145639917248772}
   - component: {fileID: 114537701744951382}
+  - component: {fileID: 114715007607273520}
   m_Layer: 0
   m_Name: Overlord
   m_TagString: Untagged
@@ -76,3 +77,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: 
+--- !u!114 &114715007607273520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1170040026037004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193c52111598e6343bc00331275ca58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  col_Green: {r: 0, g: 0, b: 0, a: 0}
+  col_Yellow: {r: 0, g: 0, b: 0, a: 0}
+  col_Red: {r: 0, g: 0, b: 0, a: 0}
