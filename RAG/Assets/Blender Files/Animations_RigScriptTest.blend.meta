@@ -1,69 +1,212 @@
 fileFormatVersion: 2
 guid: 470f1bb6bdcf1fe44bffa76fa69771e9
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: ORG-chest
-    100004: ORG-foot_L
-    100006: ORG-foot_R
-    100008: ORG-forearm_L
-    100010: ORG-forearm_R
-    100012: ORG-hand_L
-    100014: ORG-hand_R
-    100016: ORG-head
-    100018: ORG-hips
-    100020: ORG-neck
-    100022: ORG-shin_L
-    100024: ORG-shin_R
-    100026: ORG-shoulder_L
-    100028: ORG-shoulder_R
-    100030: ORG-spine
-    100032: ORG-thigh_L
-    100034: ORG-thigh_R
-    100036: ORG-toe_L
-    100038: ORG-toe_R
-    100040: ORG-upper_arm_L
-    100042: ORG-upper_arm_R
-    100044: Retopo
-    100046: rig
-    100048: root
-    400000: //RootNode
-    400002: ORG-chest
-    400004: ORG-foot_L
-    400006: ORG-foot_R
-    400008: ORG-forearm_L
-    400010: ORG-forearm_R
-    400012: ORG-hand_L
-    400014: ORG-hand_R
-    400016: ORG-head
-    400018: ORG-hips
-    400020: ORG-neck
-    400022: ORG-shin_L
-    400024: ORG-shin_R
-    400026: ORG-shoulder_L
-    400028: ORG-shoulder_R
-    400030: ORG-spine
-    400032: ORG-thigh_L
-    400034: ORG-thigh_R
-    400036: ORG-toe_L
-    400038: ORG-toe_R
-    400040: ORG-upper_arm_L
-    400042: ORG-upper_arm_R
-    400044: Retopo
-    400046: rig
-    400048: root
-    2100000: Material
-    2100002: BodyBase_Material
-    2100004: EyeEmis
-    4300000: Retopo
-    7400000: Default Take
-    7400002: Block
-    7400004: idle
-    7400006: Run
-    7400008: WeightTest
-    9500000: //RootNode
-    13700000: Retopo
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: ORG-chest
+  - first:
+      1: 100004
+    second: ORG-foot_L
+  - first:
+      1: 100006
+    second: ORG-foot_R
+  - first:
+      1: 100008
+    second: ORG-forearm_L
+  - first:
+      1: 100010
+    second: ORG-forearm_R
+  - first:
+      1: 100012
+    second: ORG-hand_L
+  - first:
+      1: 100014
+    second: ORG-hand_R
+  - first:
+      1: 100016
+    second: ORG-head
+  - first:
+      1: 100018
+    second: ORG-hips
+  - first:
+      1: 100020
+    second: ORG-neck
+  - first:
+      1: 100022
+    second: ORG-shin_L
+  - first:
+      1: 100024
+    second: ORG-shin_R
+  - first:
+      1: 100026
+    second: ORG-shoulder_L
+  - first:
+      1: 100028
+    second: ORG-shoulder_R
+  - first:
+      1: 100030
+    second: ORG-spine
+  - first:
+      1: 100032
+    second: ORG-thigh_L
+  - first:
+      1: 100034
+    second: ORG-thigh_R
+  - first:
+      1: 100036
+    second: ORG-toe_L
+  - first:
+      1: 100038
+    second: ORG-toe_R
+  - first:
+      1: 100040
+    second: ORG-upper_arm_L
+  - first:
+      1: 100042
+    second: ORG-upper_arm_R
+  - first:
+      1: 100044
+    second: Retopo
+  - first:
+      1: 100046
+    second: rig
+  - first:
+      1: 100048
+    second: root
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: ORG-chest
+  - first:
+      4: 400004
+    second: ORG-foot_L
+  - first:
+      4: 400006
+    second: ORG-foot_R
+  - first:
+      4: 400008
+    second: ORG-forearm_L
+  - first:
+      4: 400010
+    second: ORG-forearm_R
+  - first:
+      4: 400012
+    second: ORG-hand_L
+  - first:
+      4: 400014
+    second: ORG-hand_R
+  - first:
+      4: 400016
+    second: ORG-head
+  - first:
+      4: 400018
+    second: ORG-hips
+  - first:
+      4: 400020
+    second: ORG-neck
+  - first:
+      4: 400022
+    second: ORG-shin_L
+  - first:
+      4: 400024
+    second: ORG-shin_R
+  - first:
+      4: 400026
+    second: ORG-shoulder_L
+  - first:
+      4: 400028
+    second: ORG-shoulder_R
+  - first:
+      4: 400030
+    second: ORG-spine
+  - first:
+      4: 400032
+    second: ORG-thigh_L
+  - first:
+      4: 400034
+    second: ORG-thigh_R
+  - first:
+      4: 400036
+    second: ORG-toe_L
+  - first:
+      4: 400038
+    second: ORG-toe_R
+  - first:
+      4: 400040
+    second: ORG-upper_arm_L
+  - first:
+      4: 400042
+    second: ORG-upper_arm_R
+  - first:
+      4: 400044
+    second: Retopo
+  - first:
+      4: 400046
+    second: rig
+  - first:
+      4: 400048
+    second: root
+  - first:
+      21: 2100000
+    second: Material
+  - first:
+      21: 2100002
+    second: BodyBase_Material
+  - first:
+      21: 2100004
+    second: EyeEmis
+  - first:
+      43: 4300000
+    second: Retopo
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      74: 7400002
+    second: Block
+  - first:
+      74: 7400004
+    second: idle
+  - first:
+      74: 7400006
+    second: Run
+  - first:
+      74: 7400008
+    second: WeightTest
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Retopo
+  - first:
+      74: 826431638391172630
+    second: rig|Block
+  - first:
+      74: 1599155768152908184
+    second: rig|idle
+  - first:
+      74: -1602312131993969503
+    second: rig|IdlePose
+  - first:
+      74: 2921659094232983241
+    second: rig|PoseLib
+  - first:
+      74: -5480419611278045171
+    second: rig|Run
+  - first:
+      74: 1023992570608409904
+    second: rig|Walk
+  - first:
+      74: 3800446476552293948
+    second: rig|WeightTest
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -98,6 +241,8 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -105,27 +250,32 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -135,8 +285,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
